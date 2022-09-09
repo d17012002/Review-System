@@ -5,8 +5,7 @@ body {
 }
 
 .download-button {
-  margin: 5% 1% 2% 0;
-  border-radius: 30px;
+  margin: 5% 1% 2% ;
   width: 150px;
   position: relative;
 }
@@ -14,7 +13,7 @@ body {
 .heading {
   padding: 25px;
   padding-bottom: 0;
-  margin-top: 150px;
+  margin-top: 3%;
 }
 
 .container {
@@ -22,17 +21,29 @@ body {
 }
 
 h1 {
-  color: ivory;
+  color: aliceblue;
 }
 
 footer {
   width: 100%;
   align-content: center;
   text-align: center;
-  font-size: small;
-  color: rgba(187, 187, 187, 0.315);
+  font-size: large;
+  margin-top: 5%;
+  color: rgba(189, 189, 189, 0.397);
+}
+
+.logo{
+  padding: 5%;
 }
 
 .subHeading {
-  color: rgb(107, 104, 104);
+  font-size: large;
+  font-weight: 500;
+  margin-top: 25px;
+  color: rgb(163, 163, 163);
+}
+
+.info{
+  color: rgba(163, 163, 163, 0.932);
 }

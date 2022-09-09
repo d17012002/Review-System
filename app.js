@@ -34,6 +34,10 @@ app.get("/error", function (req, res) {
   res.render("error");
 });
 
+app.get("/dashboard", (req, res) => {
+  res.render("dashboard");
+})
+
 app.get("/faculty", function (req, res) {
   db.Blacklist.find(function (err, list) {
     if (err) {
@@ -73,7 +77,7 @@ app.post("/signin", function (req, res) {
     } else {
       firefoxusers.forEach(function (firefoxuser) {
         if (Pass == firefoxuser.password) {
-          res.redirect("/main");
+          res.redirect("/dashboard");
         } else {
           res.redirect("/error");
         }
@@ -92,15 +96,13 @@ app.post("/signup", function (req, res) {
     password: PASSWORD,
   });
   newFirefoxUser.save();
-  res.redirect("/main");
+  res.redirect("/dashboard");
 });
 
 app.post("/main", function (req, res) {
 
   const Faculty = req.body.fname;
   const Reason = req.body.reason;
-
-  
 
   if (req.body.button1 === "addToList") {
 
