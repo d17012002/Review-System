@@ -39,11 +39,20 @@ footer {
 
 .subHeading {
   font-size: large;
-  font-weight: 500;
   margin-top: 25px;
   color: rgb(163, 163, 163);
 }
 
 .info{
   color: rgba(163, 163, 163, 0.932);
+}
+
+.Logo {
+  width: 400px;
+}
+
+@media only screen and (max-width: 600px) {
+  .Logo {
+    width: 200px;
+  }
 }

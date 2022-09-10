@@ -2,27 +2,46 @@
 
 <link rel="stylesheet" href="signin.css">
 
-  <body>
-    <center>
-      <div class="container">
-        <h1>FFCS Review System - VIT Bhopal</h1>
-        <p class="subHeading">
-          SignIn to see reviews of faculty for FFCS!
-        </p>
-        <form class="gradient-border" action="/signin" method="POST">
-          <div class="container">
+<body>
+  
+  <div class="container">
+    <div class="outer row">
+      
+      
+      <div class="right col-lg-6 col-sm-12">
+            <img width="200px" src="https://vitbhopal.ac.in/file/2020/01/logochhota.png" alt="">
+            <br><br><hr>
+            <h5>Any Heading here..</h5><br>
+            <p class="subHeading">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic</p>
+            <br>
+            <hr>
+          
+        </div>
 
-            <label>Email</label>
-            <input type="text" placeholder="Enter Email ID" name="ename" required />
-
-            <label>Password</label>
-            <input type="password" placeholder="Enter Password" name="psw" required />
-
-            <button type="submit">Sign In</button>
-            <input type="checkbox" checked="checked" /> Remember me
-          </div>
-        </form>
+        <div class="left col-lg-6 col-sm-12">
+          <center>
+          <h6>Review System - VIT Bhopal</h6>
+          <p class="subHeading">
+            SignIn to drop or get reviews of the Campus!
+          </p>
+          <form class="gradient-border" action="/signin" method="POST">
+            <div class="container">
+  
+              <label>Email</label>
+              <input type="text" placeholder="Enter Email ID" name="ename" required />
+  
+              <label>Password</label>
+              <input type="password" placeholder="Enter Password" name="psw" required />
+  
+              <button type="submit">Sign In</button>
+              <input type="checkbox" checked="checked" /> Remember me
+            </div>
+          </form>
+          <br>
+          <p class="subHeading">Do you have an account? <a href="/signup">Create Account</a></p>
+        </center>
+        </div>
       </div>
-    </center>
+    
   </body>
   <%- include("./partials/footer.ejs") %>

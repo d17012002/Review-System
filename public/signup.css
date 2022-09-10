@@ -76,9 +76,9 @@ span.psw {
   }
 }
 
-h1 {
+h5 {
   color: ivory;
-  padding-top: 50px;
+  padding-top: 10px;
   font: size 200px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -90,6 +90,26 @@ h1 {
     "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
+.outer{
+  background: rgb(22, 22, 22);
+  margin-top: 5%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  border-radius: 10px;
+}
+
+hr{
+  background: #1098ad;
+  border-radius: 40%;
+}
+
+.right{
+  margin-top: 2%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
 
 .gradient-border {
   --borderWidth: 0.9px;
