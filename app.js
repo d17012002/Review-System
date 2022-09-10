@@ -38,6 +38,10 @@ app.get("/dashboard", (req, res) => {
   res.render("dashboard");
 })
 
+app.get("/facultyDetails", (req, res) => {
+  res.render("facultyDetails");
+})
+
 app.get("/faculty", function (req, res) {
   db.Blacklist.find(function (err, list) {
     if (err) {
