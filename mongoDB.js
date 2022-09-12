@@ -29,7 +29,8 @@ const blacklistSchema = new mongoose.Schema({
 const Blacklist = mongoose.model("Blacklist", blacklistSchema);
 
 const nameListSchema = new mongoose.Schema({
-  Name: String
+  name: String,
+  empID: Number
 })
 
 const Namelist = mongoose.model("Namelist", nameListSchema);

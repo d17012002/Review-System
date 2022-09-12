@@ -19,15 +19,11 @@
                 <br>
                 <select name="fname" class="faculty"  required>
                   <option>Select one faculty...</option>
-                   <option>Bhaskar Kumar</option>
-                   <option>Anurag Singh</option>
-                   <option>Anant Dubey</option>
-                   <option>Ansh Chauhan</option>
 
                   <%for(var i=0; i<key.length; i++){%>
 
-                     <option value="<%= key[i].Name %>" ><%= key[i].Name %></option>
-                     
+                     <option value="<%= key[i].name %>" ><%= key[i].name %> - <%= key[i].empID %></option>
+                     <br>
                   <%}%>
 
                 </select>

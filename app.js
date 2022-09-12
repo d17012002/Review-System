@@ -13,6 +13,7 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
+
   db.FirefoxUser.find(function (err, firefoxusers) {
     if (firefoxusers.length === 0) {
       db.Anurag.save();
@@ -131,11 +132,6 @@ app.post("/signup", function (req, res) {
 
 app.post("/main", function (req, res) {
 
-  //check user validity first
-  if (Email == "" || Pass == "") {
-    res.redirect("/");
-  } 
-
   const Faculty = req.body.fname;
   const Reason = req.body.reason;
 
@@ -193,14 +189,26 @@ app.get("/4m/:id", function (req, res) {
 });
 
 app.get("/main", function (req, res) {
-  db.Namelist.find(function (err, names) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(names);
-      res.render("main", { key: names });
-    }
-  });
+
+  //check user validity first
+  // if (Email == "" || Pass == "") {
+  //   res.redirect("/");
+  // }else {
+
+    db.Namelist.find(function (err, names) {
+      if (err) {
+        console.log(err);
+      } else {
+
+        console.log(names);
+        console.log(names.length);
+        
+        res.render("main", { key: names });
+      }
+    });
+
+  // }
+
 });
 
 app.listen(process.env.PORT || 3000, function () {
