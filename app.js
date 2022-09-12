@@ -2,6 +2,10 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const db = require(__dirname + "/mongoDB.js");
+const auth = require(__dirname + "/public/javaScript/checkValidation");
+
+var Email = auth.Email;
+var Pass = auth.Pass;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
@@ -31,18 +35,36 @@ app.get("/signup", function (req, res) {
 });
 
 app.get("/error", function (req, res) {
+  Email = "";
+  Pass = "";
   res.render("error");
 });
 
 app.get("/dashboard", (req, res) => {
-  res.render("dashboard");
-})
+  //check user validity first
+  if (Email == "" || Pass == "") {
+    res.redirect("/");
+  } else {
+    res.render("dashboard");
+  }
+});
 
 app.get("/facultyDetails", (req, res) => {
-  res.render("facultyDetails");
-})
+  //check user validity first
+  if (Email == "" || Pass == "") {
+    res.redirect("/");
+  } else {
+    res.render("facultyDetails");
+  }
+});
 
 app.get("/faculty", function (req, res) {
+
+  //check user validity first
+  if (Email == "" || Pass == "") {
+    res.redirect("/");
+  } 
+
   db.Blacklist.find(function (err, list) {
     if (err) {
       console.log(err);
@@ -70,8 +92,12 @@ app.post("/", function (req, res) {
 });
 
 app.post("/signin", function (req, res) {
-  var Email = req.body.ename;
-  var Pass = req.body.psw;
+  Email = req.body.ename;
+  Pass = req.body.psw;
+
+  console.log("Email : ", Email);
+  console.log("Password : ", Pass);
+
   db.FirefoxUser.find({ email: Email }, function (err, firefoxusers) {
     if (err) {
       console.log(err);
@@ -100,43 +126,46 @@ app.post("/signup", function (req, res) {
     password: PASSWORD,
   });
   newFirefoxUser.save();
-  res.redirect("/dashboard");
+  res.redirect("/signin");
 });
 
 app.post("/main", function (req, res) {
+
+  //check user validity first
+  if (Email == "" || Pass == "") {
+    res.redirect("/");
+  } 
 
   const Faculty = req.body.fname;
   const Reason = req.body.reason;
 
   if (req.body.button1 === "addToList") {
-
-    if(Faculty === "Select one faculty..."){
+    if (Faculty === "Select one faculty...") {
       res.redirect("/main");
-    }else{
+    } else {
       db.Blacklist.find({ faculty: Faculty }, function (err, lists) {
         if (!lists.length) {
           const newBlacklist = new db.Blacklist({
             faculty: Faculty,
-            reason: [Reason]
+            reason: [Reason],
           });
           newBlacklist.save();
           res.redirect("/main");
-          console.log("New faculty added in the list.")
-  
+          console.log("New faculty added in the list.");
         } else {
           db.Blacklist.updateOne(
             { faculty: Faculty },
             {
-              $push: { reason: Reason }
+              $push: { reason: Reason },
             },
             function (err) {
               if (err) {
                 console.log(err);
               } else {
-                console.log("New review added in existing faculty.")
+                console.log("New review added in existing faculty.");
               }
             }
-          )
+          );
           res.redirect("/main");
         }
       });
@@ -163,12 +192,11 @@ app.get("/4m/:id", function (req, res) {
   });
 });
 
-app.get("/main", function(req, res){
-  
-  db.Namelist.find(function (err, names){
-    if(err){
-      console.log(err)
-    }else{
+app.get("/main", function (req, res) {
+  db.Namelist.find(function (err, names) {
+    if (err) {
+      console.log(err);
+    } else {
       console.log(names);
       res.render("main", { key: names });
     }
