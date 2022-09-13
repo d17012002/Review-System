@@ -108,7 +108,7 @@ app.post("/signin", function (req, res) {
     } else {
       firefoxusers.forEach(function (firefoxuser) {
         if (Pass == firefoxuser.password) {
-          res.redirect("/dashboard");
+          res.redirect("/main");
         } else {
           res.redirect("/error");
         }

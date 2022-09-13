@@ -5,6 +5,17 @@ body {
   width: 100%;
 }
 
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+.container{
+  position: relative;
+}
+
 form {
   width: 300px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -85,14 +96,14 @@ h5 {
 }
 
 .subHeading {
-  color: rgb(107, 104, 104);
+  color: rgb(151, 148, 148);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .outer{
-  background: rgb(22, 22, 22);
+  background: rgba(124, 124, 124, 0.164);
   margin-top: 5%;
   padding-top: 3%;
   padding-bottom: 3%;

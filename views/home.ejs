@@ -1,35 +1,55 @@
 <%- include("./partials/header.ejs") %>
 
-<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="home.css" />
 
-  <body>
-    <div class="container">
-      <center>
-        <div class="col-lg-6 col-lg-12 heading">
-          <h1>VIT'B : Reviewing Platform</h1>
-          <p class="subHeading">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-        </div>
-        <div class="logo">
-          <img class="Logo" src="https://vitbhopal.ac.in/file/2020/01/logochhota.png" alt="">
-        </div>
-      
-        <div class="btn-div">
-          <center>
-            <form action="/" method="POST">
-              <button name="btn1" value="signin" type="submit" class="btn btn-primary download-button">
-                Sign In <i class="fas fa-sign-in-alt"></i>
-              </button>
-              <button name="btn2" value="signup" type="submit" class="btn btn-outline-secondary download-button">
-                Sign Up <i class="fas fa-user-plus"></i>
-              </button>
-            </form>
-            <p class="info">
-              SignIn / SignUp: To GET IN
-            </p>
-          </center>
-        </div>
-      </center>
-    </div>
-  </body>
-  
-  <%- include("./partials/footer.ejs") %>
+<body>
+  <video autoplay muted loop id="myVideo">
+    <source src="Assets/bg.mp4" type="video/mp4" />
+  </video>
+  <div class="container">
+    <center>
+      <div class="col-lg-6 col-lg-12 heading">
+        <h1>VIT'B : Reviewing Platform</h1>
+        <p class="subHeading">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book.
+        </p>
+      </div>
+      <div class="logo">
+        <img
+          class="Logo"
+          src="https://vitbhopal.ac.in/file/2020/01/logochhota.png"
+          alt=""
+        />
+      </div>
+
+      <div class="btn-div">
+        <center>
+          <form action="/" method="POST">
+            <button
+              name="btn1"
+              value="signin"
+              type="submit"
+              class="btn btn-primary download-button"
+            >
+              Sign In <i class="fas fa-sign-in-alt"></i>
+            </button>
+            <button
+              name="btn2"
+              value="signup"
+              type="submit"
+              class="btn btn-outline-secondary download-button"
+            >
+              Sign Up <i class="fas fa-user-plus"></i>
+            </button>
+          </form>
+          <p class="info">SignIn / SignUp: To GET IN</p>
+        </center>
+      </div>
+    </center>
+  </div>
+</body>
+
+<%- include("./partials/footer.ejs") %>

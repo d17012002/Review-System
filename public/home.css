@@ -1,8 +1,16 @@
 body {
   margin: 0;
   padding: 0;
-  background: rgb(19, 19, 19);
 }
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
 
 .download-button {
   margin: 5% 1% 2% ;
@@ -34,6 +42,7 @@ footer {
 }
 
 .logo{
+  position: relative;
   padding: 5%;
 }
 
