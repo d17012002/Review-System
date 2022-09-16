@@ -33,7 +33,8 @@
               <input type="text" placeholder="Enter Email ID" name="ename" required />
   
               <label>Password</label>
-              <input type="password" placeholder="Enter Password" name="psw" required />
+              <input type="password" id="myInput" placeholder="Enter Password" name="psw" required />
+              <input type="checkbox" onclick="revealPass()"> Show Password
   
               <button type="submit">Sign In</button>
               <input type="checkbox" checked="checked" /> Remember me
@@ -46,6 +47,6 @@
         </center>
         </div>
       </div>
-    
+    <script src="javaScript/revealPass.js"></script>
   </body>
   <%- include("./partials/footer.ejs") %>
