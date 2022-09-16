@@ -20,14 +20,10 @@ hr{
     padding: 4%;
 }
 
-
-.table-wrap {
-    border-radius: 1%;
-}
-
 td,
 th {
     text-align: center;
+    border-radius: 0.3%;
 }
 
 .table-dark {
@@ -160,7 +156,7 @@ th {
 .table thead th {
     border: none;
     padding: 20px 30px;
-    font-size: 14px;
+    font-size: 17px;
     color: #fff;
     border-bottom: 4px solid rgb(19, 19, 19);
 }
@@ -174,5 +170,5 @@ th {
     border: none;
     padding: 20px 30px;
     border-bottom: 4px solid rgb(19,19,19);
-    font-size: 14px;
+    font-size: 17px;
 }

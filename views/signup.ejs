@@ -15,14 +15,15 @@
             <p class="subHeading">
               Create a account by filling the form
             </p>
-            <form class="gradient-border" action="/signup" method="POST">
+            <form autocomplete="off" class="gradient-border" action="/signup" method="POST">
       
               <div class="container">
                 <label>Full Name</label>
                 <input type="text" placeholder="Enter Name" name="name" required />
       
                 <label>Email</label>
-                <input type="email" placeholder="Enter Email ID" name="email" required />
+                <input type="email" id="email_id" placeholder="Enter Email ID" name="email" required />
+                <p class="error-msg"></p>
       
                 <label>Password</label>
                 <input type="password" placeholder="Create Password" name="psw" required />
@@ -46,7 +47,7 @@
           </div>
   
         </div>
-      
+        <script src="javaScript/checkValidation.js"></script>
     </body>
 
 

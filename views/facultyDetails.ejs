@@ -22,42 +22,24 @@
                         </tr>
                       </thead>
                       <tbody>
+                        <% for(var i=0; i<details.length; i++) { %>
+
                         <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>markotto@email.com</td>
+                          <td scope="row"> <%=details[i].empID %> </td>
+                          <td> <%= details[i].name %> </td>
+                          <td> <%= details[i].mob %> </td>
+                          <td> <%= details[i].email_ID %> </td>
                         </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>jacobthornton@email.com</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>larrybird@email.com</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">4</th>
-                          <td>John</td>
-                          <td>Doe</td>
-                          <td>johndoe@email.com</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">5</th>
-                          <td>Gary</td>
-                          <td>Bird</td>
-                          <td>garybird@email.com</td>
-                        </tr>
+
+                        <% } %>
+                        
                       </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </div>
+    <br><br>
 </body>
 
 
