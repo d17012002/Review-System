@@ -4,6 +4,55 @@ body {
   background: rgb(19, 19, 19);
 }
 
+select {
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  -ms-appearance:none;
+  appearance:none;
+  outline:0;
+  box-shadow:none;
+  border:0!important;
+  background: #444b49;
+  background-image: none;
+  flex: 1;
+  padding: 0 .5em;
+  color:rgb(216, 211, 211);
+  cursor:pointer;
+  font-size: 1em;
+  font-family: 'Open Sans', sans-serif;
+}
+select::-ms-expand {
+  display: none;
+}
+.select {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  line-height: 3;
+  background: #444b49;
+  overflow: hidden;
+  border-radius: .25em;
+}
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #2f3030;
+  cursor:pointer;
+  pointer-events:none;
+  transition:.25s all ease;
+}
+.select:hover::after {
+  color: #23b499;
+}
+
+textarea{
+  border-radius: 5px;
+}
+
 .download-button {
   margin: 3% 1% 2% 0;
   width: 200px;

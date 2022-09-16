@@ -17,16 +17,19 @@
               <div class="container">
                 <label for="faculties">Faculty Name</label>
                 <br>
-                <select name="fname" class="faculty"  required>
-                  <option>Select one faculty...</option>
+                <div class="select">
 
-                  <%for(var i=0; i<key.length; i++){%>
-
-                     <option value="<%= key[i].name %>" ><%= key[i].name %> - <%= key[i].empID %></option>
-                     <br>
-                  <%}%>
-
-                </select>
+                  <select name="fname" class="faculty"  required>
+                    <option>Select one faculty...</option>
+  
+                    <%for(var i=0; i<key.length; i++){%>
+  
+                       <option value="<%= key[i].name %> - <%= key[i].empID %>" ><%= key[i].name %> - <%= key[i].empID %></option>
+                       <br>
+                    <%}%>
+  
+                  </select>
+                </div>
                 <br>
                 <label>Reason</label>
               <textarea name="reason" id="" cols="20" rows="5" placeholder="Drop your reason..." required></textarea>

@@ -11,24 +11,29 @@
       <center>
         <div class="col-lg-12 col-sm-12">
           <h4>Faculty reviews for FFCS!</h4>
-          <p class="subHeading">Reviews of all these faculties are dropped by your friends and seniors.</p><br><br>
+          <br>
+          <p class="subHeading">Reviews of all these faculties are dropped by your friends and seniors. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an and scrambled it to make a type specimen book.</p><br>
 
           <%for(var i=0; i<key.length; i++){%>
 
             <button class="accordion">
-              <%=i+1%>. <%= key[i].faculty %> - 100128 <i class="fas fa-user-tie"></i>
+              <%=i+1%>. <%= key[i].faculty %> <i class="fas fa-user-tie"></i>
             </button>
 
             <div class="panel">
+              <br>
               <%for(var j=0; j<key[i].reason.length; j++){%>
                 <p><i style="color: rgb(34, 173, 238);" class="fas fa-arrow-alt-circle-right"></i>
                   <em id="reviews">
                     <%= key[i].reason[j] %>
                   </em>
+                  
                 </p>
                 <%}%>
             </div>
-            <%}%>
+              <%}%>
+              <br>
+    
               <div class="footer">
                 <br>
                 <p class="subHeading">Copyright 2022 | Anurag Kumar</p>

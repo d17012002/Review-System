@@ -155,8 +155,6 @@ app.post("/forget-password", (req, res) => {
               console.log("Email sent successfully");
             }
           })
-          
-          
         }
       });
     }
@@ -351,16 +349,11 @@ app.get("/main", function (req, res) {
     if (err) {
       console.log(err);
     } else {
-      console.log(names);
-      console.log(names.length);
-
       res.render("main", { key: names });
     }
   });
-
-  // }
 });
 
 app.listen(process.env.PORT || 3000, function () {
-  console.log("Server running at 🚀: http://localhost:3000/");
+  console.log("Server running at 🚀 : http://localhost:3000/");
 });
