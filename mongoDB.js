@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 mongoose.connect("mongodb+srv://webconnect:webconnect123@cluster0.tnchb.mongodb.net/firefoxDB");
 
+
 const firefoxSchema = new mongoose.Schema({
   name: {
     type: String,

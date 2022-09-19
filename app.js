@@ -42,6 +42,10 @@ app.get("/signup", function (req, res) {
 });
 
 app.get("/error", function (req, res) {
+    //check user validity first
+  if (Email == "" || Pass == "") {
+      res.redirect("/");
+  }
   Email = "";
   Pass = "";
   res.render("error");
@@ -75,7 +79,7 @@ app.get("/faculty", function (req, res) {
   //check user validity first
   if (Email == "" || Pass == "") {
     res.redirect("/");
-  }
+}
 
   db.Blacklist.find(function (err, list) {
     if (err) {
@@ -110,7 +114,7 @@ app.post("/forget-password", (req, res) => {
       users.forEach(function (user) {
         if (user.email === Email) {
  
-          res.send("Yes this user exists: " + Email + "<br>Password reset link has been sent</br>");
+          res.send("Yes this user exists: " + Email + "<br>Password reset link has been sent to your email ID</br>");
 
           const secret = JWT_SECRET + user.password;
           const payload = {
@@ -119,7 +123,7 @@ app.post("/forget-password", (req, res) => {
           }
           const token = jwt.sign(payload, secret, {expiresIn: '5m'});
 
-          //send email  - write code here
+          //send email  - code here
           
           const link = `http://localhost:3000/reset-password/${user.id}/${token}`;
           console.log("Reset link for localhost: ", link);
@@ -160,6 +164,7 @@ app.post("/forget-password", (req, res) => {
     }
   });
 });
+
 
 app.get("/reset-password/:id/:token", (req, res, next) => {
    const {id, token} = req.params;
@@ -215,18 +220,6 @@ app.post("/reset-password/:id/:token", (req, res, next) => {
   }
 });
 
-app.post("/error", function (req, res) {
-  res.redirect("/");
-});
-
-app.post("/", function (req, res) {
-  if (req.body.btn1 === "signin") {
-    res.redirect("/signin");
-  }
-  if (req.body.btn2 === "signup") {
-    res.redirect("/signup");
-  }
-});
 
 app.post("/signin", function (req, res) {
   Email = req.body.ename;
@@ -345,7 +338,13 @@ app.get("/4m/:id", function (req, res) {
 });
 
 app.get("/main", function (req, res) {
-  db.Namelist.find(function (err, names) {
+    
+  //check user validity first
+    if (Email == "" || Pass == "") {
+      res.redirect("/");
+    }
+
+    db.Namelist.find(function (err, names) {
     if (err) {
       console.log(err);
     } else {
