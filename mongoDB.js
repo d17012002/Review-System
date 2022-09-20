@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 mongoose.connect("mongodb+srv://webconnect:webconnect123@cluster0.tnchb.mongodb.net/firefoxDB");
 
+
 const firefoxSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -17,6 +18,18 @@ const firefoxSchema = new mongoose.Schema({
 });
 
 const FirefoxUser = mongoose.model("FirefoxUser", firefoxSchema);
+
+const facultyInfoSchema = new mongoose.Schema({
+  empID: {
+    type: Number,
+    required: [true, "employee ID is required"]
+  },
+  name: String,
+  mob: Number,
+  email_ID: String
+});
+
+const FacultyInfo = mongoose.model("FacultyInfo", facultyInfoSchema);
 
 const blacklistSchema = new mongoose.Schema({
   faculty: {
@@ -44,3 +57,4 @@ module.exports.Anurag = new FirefoxUser({
 module.exports.FirefoxUser = FirefoxUser;
 module.exports.Blacklist = Blacklist;
 module.exports.Namelist = Namelist;
+module.exports.FacultyInfo = FacultyInfo;

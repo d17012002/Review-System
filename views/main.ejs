@@ -17,16 +17,18 @@
               <div class="container">
                 <label for="faculties">Faculty Name</label>
                 <br>
-                <select name="fname" class="faculty"  required>
-                  <option>Select one faculty...</option>
+                <div class="select">
 
-                  <%for(var i=0; i<key.length; i++){%>
-
-                     <option value="<%= key[i].name %>" ><%= key[i].name %> - <%= key[i].empID %></option>
-                     <br>
-                  <%}%>
-
-                </select>
+                  <select name="fname" class="faculty"  required>
+                    <option>Select one faculty...</option>
+          
+                    <%for(var i=0; i<key.length; i++){%>
+                       <option value="<%= key[i].name %> - <%= key[i].empID %>" ><%= key[i].name %> - <%= key[i].empID %></option>
+                       <br>
+                    <%}%>
+  
+                  </select>
+                </div>
                 <br>
                 <label>Reason</label>
               <textarea name="reason" id="" cols="20" rows="5" placeholder="Drop your reason..." required></textarea>
@@ -45,10 +47,16 @@
     </div>
     </center>
     </div>
+
     <footer>
       <p>Copyright 2022 | Anurag Kumar</p>
     </footer>
+
     <script>
+      // stringify the data passed from router to ejs (within the EJS template only)
+      var parsed_data = <%- JSON.stringify(key) %>  
+      //simply link your javascript file and there you can use parsed_data for the pre processing work
+      console.log(parsed_data[0]);
 
       function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");

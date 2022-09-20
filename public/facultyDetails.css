@@ -4,7 +4,14 @@ body {
     font-weight: normal;
     background: rgb(19, 19, 19);
 }
-
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  
 
 .fluid-container {
     padding-left: 5%;
@@ -13,21 +20,25 @@ body {
 
 hr{
     background: #454d55;
+    margin-top: 30px;
+   
 }
 
 .header{
     color: #fff;
     padding: 4%;
+    position: relative;
 }
-
-
-.table-wrap {
-    border-radius: 1%;
-}
-
+.subHeading {
+    color: rgb(177, 174, 174);
+    width: 100%;
+    font-weight: 500;
+    margin-top: 20px;
+  }
 td,
 th {
     text-align: center;
+    border-radius: 0.3%;
 }
 
 .table-dark {
@@ -160,7 +171,7 @@ th {
 .table thead th {
     border: none;
     padding: 20px 30px;
-    font-size: 14px;
+    font-size: 17px;
     color: #fff;
     border-bottom: 4px solid rgb(19, 19, 19);
 }
@@ -174,5 +185,5 @@ th {
     border: none;
     padding: 20px 30px;
     border-bottom: 4px solid rgb(19,19,19);
-    font-size: 14px;
+    font-size: 17px;
 }

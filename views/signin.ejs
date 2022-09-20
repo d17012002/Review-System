@@ -26,24 +26,27 @@
           <p class="subHeading">
             SignIn to drop or get reviews of the Campus!
           </p>
-          <form class="gradient-border" action="/signin" method="POST">
+          <form autocomplete="off" class="gradient-border" action="/signin" method="POST">
             <div class="container">
   
               <label>Email</label>
               <input type="text" placeholder="Enter Email ID" name="ename" required />
   
               <label>Password</label>
-              <input type="password" placeholder="Enter Password" name="psw" required />
+              <input type="password" id="myInput" placeholder="Enter Password" name="psw" required />
+              <input type="checkbox" onclick="revealPass()"> Show Password
   
               <button type="submit">Sign In</button>
               <input type="checkbox" checked="checked" /> Remember me
             </div>
           </form>
           <br>
+          <p class="subHeading">Trouble Signing In? <a href="/forget-password">Forgot Password?</a></p>
           <p class="subHeading">Do you have an account? <a href="/signup">Create Account</a></p>
+          
         </center>
         </div>
       </div>
-    
+    <script src="javaScript/revealPass.js"></script>
   </body>
   <%- include("./partials/footer.ejs") %>
