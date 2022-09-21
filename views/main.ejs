@@ -17,8 +17,8 @@
               <div class="container">
                 <label for="faculties">Faculty Name</label>
                 <br>
-                <div class="select">
-
+                <!-- <div class="select">
+                  <input id="searchbar" onkeyup="search_animal()" type="text" name="search" placeholder="Search animals..">
                   <select name="fname" class="faculty"  required>
                     <option>Select one faculty...</option>
           
@@ -28,7 +28,17 @@
                     <%}%>
   
                   </select>
+                </div> -->
+
+                <div class="facultyDropDown">
+                  <input id="facultySearchBar" onkeyup="search_faculty()" type="text" name="search" placeholder="Search Faculty.." autocomplete="off">
+                  <ul id="list">
+                    <%for(var i=0; i<key.length; i++){%>
+                      <li class="facultyLi"><%= key[i].name %> - <%= key[i].empID %></li>
+                   <%}%>
+                  </ul>
                 </div>
+
                 <br>
                 <label>Reason</label>
               <textarea name="reason" id="" cols="20" rows="5" placeholder="Drop your reason..." required></textarea>
@@ -62,6 +72,26 @@
         document.getElementById("myDropdown").classList.toggle("show");
       }
 
+      function search_faculty() {
+        let input = document.getElementById('facultySearchBar').value
+        input=input.toLowerCase();
+        let li = document.getElementsByClassName('facultyLi');
+        let ul = document.getElementById('list');
+        if(input === ""){
+          ul.style.display="none";      
+        }
+        for (i = 0; i < li.length; i++) {
+          if (!li[i].innerHTML.toLowerCase().includes(input)) {
+              li[i].style.display="none";
+          }
+          else if(li[i].innerHTML.toLowerCase().includes(input)){
+             li[i].style.display="list-item";
+          }
+          else{
+            // UwU
+          }
+        }
+      }
     </script>
   </body>
   <%- include("./partials/footer.ejs") %>
