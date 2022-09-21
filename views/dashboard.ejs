@@ -1,9 +1,124 @@
 <%- include("./partials/header.ejs") %>
 
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+/>
 <link rel="stylesheet" href="dashboard.css" />
 
 <body>
-  <div>DASHBOARD WILL COME HERE</div>
+  <!-- partial:index.partial.html -->
+  <div id="app" class="app">
+    <div class="header">VIT'B Reviewing Platform</div>
+    <div class="page">
+      <div class="page-sidebar">
+        <div class="page-sidebar-header">Features</div>
+        <div class="page-sidebar-body">
+          <input type="text" placeholder=" Search..."> <span>🎯</span>
+          <br><br>
+          <a href="#">FFCS-faculty-review/VITB</a><br />
+          <a href="#">boys-hostel-blockA</a><br />
+          <a href="#">boys-hostel-blockB</a><br />
+          <a href="#">boys-hostel-blockC</a><br />
+          <a href="#">boys-hostel-blockD</a><br />
+          <a href="#">faculty-contact-details/VITB</a><br />
+          <a href="#">girls-hostel-blockA</a><br />
+          <a href="#">club-details/feedback</a><br />
+          <a href="#">academic-courses/subjects</a><br />
+          <a href="#">sports-acitivities</a><br />
+          <a href="#">mess1-mayuri-review</a><br />
+          <a href="#">mess2-crcl-review</a><br />
+          <a href="#">underbelly-menu-review</a><br />
+
+          
+        </div>
+        <span class="sign-out">Sign out <i style="font-size: 17px;" class="fal fa-sign-out-alt"></i></span>
+        
+      </div>
+      <div class="chat">
+        <div class="chat-header">
+          Ask your queries here
+
+          <a href @click.prevent="toggleSidebar">Latest</a>
+        </div>
+        <div class="chat-container">
+          <div class="chat-container-content">
+            <div id="chat" class="chat-content">
+            
+                <div>
+                  <div class="profile-icon"><i class="fas fa-user-circle"></i> Anurag Singh <code>posted this query</code></div>
+                  <details open>
+                    <summary>
+                      How do you create an accordion?
+                    </summary>
+                    <div>
+                     <span>
+                     – Easy! As long as you don't have to support IE11 or older browsers you could use <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> natively.</span> <br>
+                     <span>– Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</span><
+                     <br>
+                     <input class="reply" placeholder="Drop your reply..." type="text"><input type="submit">
+                    </div>
+                  </details>
+                  <hr>
+                  <div class="profile-icon"><i class="fas fa-user-circle"></i> d17012002 <code>posted this query</code></div>
+                  <details>
+                    <summary>
+                      What if I have to support IE11 or older browsers?
+                    </summary>
+                    <div>
+                      <span>
+                        – No worries. The fallback for these elements is quite good. They will display as open. You won't get the open/close mechanism, but you won't lose any content either.
+                      </span>
+                      <br>
+                     <input class="reply" placeholder="Drop your reply..." type="text"><input type="submit">
+                      </div>
+                  </details>
+                  <hr>
+                  <div class="profile-icon"><i class="fas fa-user-circle"></i> SUBS02917 <code>posted this query</code></div>
+                  <details>
+                    <summary>
+                      What type of content can I have inside one of these?
+                    </summary>
+                    <div>
+                      <span>– Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</span><br>
+                      <span>– Almost anything you'd like. The <code>&lt;details&gt;</code> element allows all <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#flow_content" target="_blank">flow content</a>, which is basically everything.</span>
+                      <br>
+                     <input class="reply" placeholder="Drop your reply..." type="text"><input type="submit">
+                    </div>
+                  </details>
+                  <hr>
+                  <div class="profile-icon"><i class="fas fa-user-circle"></i> Imgroot <code>posted this query</code></div>
+                  <details>
+                    <summary>
+                      How does it work?
+                    </summary>
+                    <div>
+                      <span>– Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</span><br><br>
+                      <span>– Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
+                      <br>
+                     <input class="reply" placeholder="Drop your reply..." type="text"><input type="submit">
+                    </div>
+                  </details>
+                  <hr>
+                </div>
+            </div>
+            <form @submit.prevent="addMessage" class="chat-footer">
+              <input
+                type="text"
+                class="form-control mr-2"
+                placeholder="Enter your query message..."
+                v-model="message"
+              />
+              <button type="submit" class="btn btn-primary">Post</button>
+            </form>
+          </div>
+          <div v-show="sidebar" class="chat-sidebar">
+            Live Features in Cards
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 <%- include("./partials/footer.ejs") %>

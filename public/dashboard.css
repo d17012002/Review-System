@@ -1,0 +1,263 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.app {
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column; 
+}
+
+.header {
+  border-bottom: 1px solid #f0f0f0;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.page {
+  min-height:0;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.page-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 18%;
+  border-right: 1px solid #f0f0f0;
+}
+
+.page-sidebar-header {
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.page-sidebar-body {
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+.chat {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.chat-header {
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.chat-container-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-content {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  min-height: 0;
+}
+
+.chat-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 100%;
+}
+
+.chat-footer {
+  padding: 10px;
+  padding-bottom: 18px;
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid #f0f0f0;
+}
+
+.chat-sidebar {
+  border-left: 1px solid #f0f0f0;
+  padding: 10px;
+  width: 27%;
+}
+
+@media only screen and (max-width: 600px) {
+  .chat-sidebar {
+    width: 0%;
+    padding: 0;
+    border-left: 0 solid white;
+  }
+}
+
+
+/* Accordion */
+*, *:after, *:before {
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: 16px;
+}
+
+
+*:focus {
+	outline: none;
+}
+
+.chat-content > div {
+  margin-top: 10px;
+	width: 93%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+details div {
+	border-left: 1px solid rgb(212, 211, 211);
+	border-right: 1px solid rgb(212, 211, 211);
+	border-bottom: 1px solid rgb(212, 211, 211);
+	padding: 15px;
+}
+
+details div > * + * {
+	margin-top: 1.5em;
+}
+
+details + details {
+	margin-top: .5rem;
+}
+
+summary {
+	list-style: none;
+}
+
+summary::-webkit-details-marker {
+	display: none;
+}
+
+summary {
+	border: 1px solid rgb(212, 211, 211);
+	padding: 20px;
+	cursor: pointer;
+	position: relative;
+	padding-left: calc(1.75rem + .75rem + .75rem);
+}
+
+summary:before {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: .75rem;
+	content: "↓";
+	width: 1.75rem;
+	height: 1.75rem;
+	background-color: #000;
+	color: #FFF;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0;
+}
+
+details[open] summary {
+	background-color: #eee;
+}
+
+details[open] summary:before {
+	content: "↑";
+}
+
+summary:hover {
+	background-color: #eee;
+}
+
+a {
+	/* color: inherit; */
+	text-decoration: none;
+	box-shadow: 0 1px 0 0;
+}
+
+a:hover {
+	box-shadow: 0 1px 0 0;
+}
+
+code {
+	font-family: monospace;
+	font-weight: 600;
+}
+
+.profile-icon{
+  margin-top: 10px;
+  margin-left: -10px;
+  margin-bottom: 4px;
+}
+
+hr{
+  margin-bottom: 30px;
+  background: rgba(105, 105, 105, 0.548);
+  border-bottom-left-radius: 50%;
+  border-top-left-radius: 50%;
+}
+
+i{
+  font-size: 22px;
+}
+
+.reply{
+  margin: 5px;
+  width: 50%;
+  border: 1px solid rgb(208, 208, 212);
+}
+
+.sign-out{
+  margin-left: 20px;
+   margin-top: 200px;
+}
