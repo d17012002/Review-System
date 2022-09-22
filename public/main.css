@@ -64,9 +64,14 @@ select::-ms-expand {
   color:rgb(216, 211, 211);
   font-size: 1em;
   font-family: 'Open Sans', sans-serif;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .facultyDropDown ul::-webkit-scrollbar{
   display: none;
+}
+.facultyDropDown ul li{
+  cursor: pointer;
 }
 
 textarea{

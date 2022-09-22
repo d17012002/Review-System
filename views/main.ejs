@@ -34,7 +34,7 @@
                   <input id="facultySearchBar" onkeyup="search_faculty()" type="text" name="search" placeholder="Search Faculty.." autocomplete="off">
                   <ul id="list">
                     <%for(var i=0; i<key.length; i++){%>
-                      <li class="facultyLi"><%= key[i].name %> - <%= key[i].empID %></li>
+                      <li class="facultyLi" id="facultyLiid"><%= key[i].name %> - <%= key[i].empID %></li>
                    <%}%>
                   </ul>
                 </div>
@@ -71,21 +71,23 @@
       function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
       }
-
+      
+      let ul = document.getElementById('list');
+      let li = document.getElementsByClassName('facultyLi');
+      ul.style.display="none";
       function search_faculty() {
-        let input = document.getElementById('facultySearchBar').value
-        input=input.toLowerCase();
-        let li = document.getElementsByClassName('facultyLi');
-        let ul = document.getElementById('list');
-        if(input === ""){
-          ul.style.display="none";      
-        }
+        let input = document.getElementById('facultySearchBar').value.toLowerCase();
         for (i = 0; i < li.length; i++) {
-          if (!li[i].innerHTML.toLowerCase().includes(input)) {
-              li[i].style.display="none";
+          if(input === ""){
+            ul.style.display="none";
+          }
+          else if (!li[i].innerHTML.toLowerCase().includes(input)) {
+            ul.style.display="block";
+            li[i].style.display="none";
           }
           else if(li[i].innerHTML.toLowerCase().includes(input)){
-             li[i].style.display="list-item";
+            ul.style.display="block";
+            li[i].style.display="list-item";
           }
           else{
             // UwU
