@@ -131,7 +131,7 @@
 
       selected.addEventListener("click", () => {
         optionsContainer.classList.toggle("active");
-        searchBox.value = "";
+        // searchBox.value = "";
         filterList("");
         if (optionsContainer.classList.contains("active")) {
           searchBox.focus();
@@ -141,7 +141,9 @@
       optionsList.forEach(o => {
         o.addEventListener("click", () => {
           selected.innerHTML = o.querySelector("label").innerHTML;
-          console.log(o.querySelector("label").innerHTML);
+          // console.log(o.querySelector("label").innerHTML);
+          searchBox.value = o.querySelector("label").innerHTML;
+          console.log(searchBox.value);
           optionsContainer.classList.remove("active");
         });
       });

@@ -80,10 +80,12 @@ select::-ms-expand {
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .options-container {
+  position: absolute;
   background: white;
-  width: 100%;
+  width: 90%;
   opacity: 0;
   border-radius: 8px;
   overflow: hidden;
@@ -101,10 +103,11 @@ select::-ms-expand {
 .selected {
   background: white;
   border-radius: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 30px;
   color: rgb(56, 52, 52);
   position: relative;
   order: 0;
+  width: 100%;
   /* box-shadow: 0px 10px 70px 4px rgba(0, 0, 0, 0.13); */
 }
 .selected:after {
@@ -126,11 +129,10 @@ select::-ms-expand {
   font-weight: 700px;
 }
 .search-box input {
-  width: 100%;
-  padding: 16px 16px;
+  position: absolute;
+  /* padding: 16px 16px; */
   font-family: Roboto, sans-serif;
   font-size: 16px;
-  position: absolute;
   opacity: 0;
   outline: 3px solid grey;
   outline-offset: -10px;
