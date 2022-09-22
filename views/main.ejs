@@ -1,6 +1,7 @@
 <%- include("./partials/header.ejs") %>
 
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <body>
     <div class="container">
@@ -18,7 +19,6 @@
                 <label for="faculties">Faculty Name</label>
                 <br>
                 <!-- <div class="select">
-                  <input id="searchbar" onkeyup="search_animal()" type="text" name="search" placeholder="Search animals..">
                   <select name="fname" class="faculty"  required>
                     <option>Select one faculty...</option>
           
@@ -30,13 +30,34 @@
                   </select>
                 </div> -->
 
-                <div class="facultyDropDown">
-                  <input id="facultySearchBar" onkeyup="search_faculty()" type="text" name="search" placeholder="Search Faculty.." autocomplete="off">
+                <!-- <div class="facultyDropDown">
+                  <input class="searchinputclass" id="facultySearchBar" onkeyup="search_faculty()" type="text" name="search" placeholder="Search Faculty.." autocomplete="off">
                   <ul id="list">
                     <%for(var i=0; i<key.length; i++){%>
-                      <li class="facultyLi" id="facultyLiid"><%= key[i].name %> - <%= key[i].empID %></li>
+                      <input type="radio" class="radio" />
+                      <label class="facultyLi" id="facultyLiid" for="film"><%= key[i].name %> - <%= key[i].empID %></label>
+                      <li><%= key[i].name %> - <%= key[i].empID %></li>
                    <%}%>
                   </ul>
+                </div> --> 
+
+                <div class="select-box">
+                  <div class="options-container">
+                    <div class="option" id="option1">
+                      <input type="radio" class="radio" />
+                      <label for="film">Lokesh Rathore</label>
+                    </div>
+                    <%for(var i=0; i<key.length; i++){%>
+                      <div class="option">
+                        <input type="radio" class="radio" />
+                        <label for="film"><%= key[i].name %> - <%= key[i].empID %></label>
+                      </div>
+                   <%}%>
+                  </div>
+                  <div class="selected">Search</div>
+                  <div class="search-box">
+                    <input type="text" placeholder="Search Faculty..." />
+                  </div>
                 </div>
 
                 <br>
@@ -72,28 +93,73 @@
         document.getElementById("myDropdown").classList.toggle("show");
       }
       
-      let ul = document.getElementById('list');
-      let li = document.getElementsByClassName('facultyLi');
-      ul.style.display="none";
-      function search_faculty() {
-        let input = document.getElementById('facultySearchBar').value.toLowerCase();
-        for (i = 0; i < li.length; i++) {
-          if(input === ""){
-            ul.style.display="none";
-          }
-          else if (!li[i].innerHTML.toLowerCase().includes(input)) {
-            ul.style.display="block";
-            li[i].style.display="none";
-          }
-          else if(li[i].innerHTML.toLowerCase().includes(input)){
-            ul.style.display="block";
-            li[i].style.display="list-item";
-          }
-          else{
-            // UwU
-          }
+      // let ul = document.getElementById('list');
+      // let li = document.getElementsByClassName('facultyLi');
+      // ul.style.display="none";
+      // function search_faculty() {
+      //   let input = document.getElementById('facultySearchBar').value.toLowerCase();
+      //   for (i = 0; i < li.length; i++) {
+      //     if(input === ""){
+      //       ul.style.display="none";
+      //     }
+      //     else if (!li[i].innerHTML.toLowerCase().includes(input)) {
+      //       ul.style.display="block";
+      //       li[i].style.display="none";
+      //     }
+      //     else if(li[i].innerHTML.toLowerCase().includes(input)){
+      //       ul.style.display="block";
+      //       li[i].style.display="list-item";
+      //     }
+      //     else{
+      //       // UwU
+      //     }
+      //   }
+      //   for(i=0;i<li.length;i++){
+      //     if(li[i].onClick()){
+      //       alert("li clicked");
+      //     }
+      //     else{
+      //       alert("not clicked");
+      //     }
+      //   }
+      // }
+
+      const selected = document.querySelector(".selected");
+      const optionsContainer = document.querySelector(".options-container");
+      const searchBox = document.querySelector(".search-box input");
+      const optionsList = document.querySelectorAll(".option");
+
+      selected.addEventListener("click", () => {
+        optionsContainer.classList.toggle("active");
+        searchBox.value = "";
+        filterList("");
+        if (optionsContainer.classList.contains("active")) {
+          searchBox.focus();
         }
-      }
+      });
+
+      optionsList.forEach(o => {
+        o.addEventListener("click", () => {
+          selected.innerHTML = o.querySelector("label").innerHTML;
+          console.log(o.querySelector("label").innerHTML);
+          optionsContainer.classList.remove("active");
+        });
+      });
+      searchBox.addEventListener("keyup", function(e) {
+        filterList(e.target.value);
+      });
+      const filterList = searchTerm => {
+        searchTerm = searchTerm.toLowerCase();
+        optionsList.forEach(option => {
+          let label = option.firstElementChild.nextElementSibling.innerText.toLowerCase();
+          if (label.indexOf(searchTerm) != -1) {
+            option.style.display = "block";
+          } else {
+            option.style.display = "none";
+          }
+        });
+      };
+
     </script>
   </body>
   <%- include("./partials/footer.ejs") %>
