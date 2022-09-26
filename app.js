@@ -52,12 +52,7 @@ app.get("/error", function (req, res) {
 });
 
 app.get("/dashboard", (req, res) => {
-  //check user validity first
-  if (Email == "" || Pass == "") {
-    res.redirect("/");
-  } else {
-    res.render("dashboard");
-  }
+  res.render("dashboard");
 });
 
 app.get("/facultyDetails", (req, res) => {
