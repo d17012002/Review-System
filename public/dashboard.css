@@ -46,7 +46,7 @@ body {
 .page-sidebar {
   display: flex;
   flex-direction: column;
-  width: 18%;
+  width: 270px;
   border-right: 1px solid #f0f0f0;
 }
 
@@ -127,14 +127,17 @@ body {
 .chat-sidebar {
   border-left: 1px solid #f0f0f0;
   padding: 10px;
-  width: 27%;
+  width: 270px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .chat-sidebar {
     width: 0%;
     padding: 0;
     border-left: 0 solid white;
+  }
+  .head-txt{
+    display: none;
   }
 }
 
@@ -260,4 +263,8 @@ i{
 .sign-out{
   margin-left: 20px;
    margin-top: 200px;
+}
+
+.hide-bars{
+  display: none;
 }

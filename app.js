@@ -280,7 +280,7 @@ app.post("/main", function (req, res) {
   const Reason = req.body.reason;
 
   console.log(Faculty);
-  console.log(Reason)
+  console.log(Reason);
 
   if (req.body.button1 === "addToList") {
     if (Faculty === "Select one faculty...") {

@@ -37,9 +37,9 @@
       </div>
       <div class="chat">
         <div class="chat-header">
-          Ask your queries here
+         <span class="head-txt"> Ask your queries here </span>
 
-          <a href @click.prevent="toggleSidebar">Latest</a>
+          <a href="" onclick="hide();return false;">Latest</a>
         </div>
         <div class="chat-container">
           <div class="chat-container-content">
@@ -54,7 +54,7 @@
                     <div>
                      <span>
                      – Easy! As long as you don't have to support IE11 or older browsers you could use <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> natively.</span> <br>
-                     <span>– Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</span><
+                     <span>– Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</span>
                      <br>
                      <input class="reply" placeholder="Drop your reply..." type="text"><input type="submit">
                     </div>
@@ -112,7 +112,7 @@
               <button type="submit" class="btn btn-primary">Post</button>
             </form>
           </div>
-          <div v-show="sidebar" class="chat-sidebar">
+          <div class="chat-sidebar">
             Live Features in Cards
           </div>
         </div>

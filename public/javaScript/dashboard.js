@@ -50,10 +50,11 @@ new Vue({
           chat.scrollTop = chat.scrollHeight;
         });
       },
-      
-      toggleSidebar() {
-        this.sidebar = ! this.sidebar;
-      }
     }
   });
 
+function hide() {
+  document.querySelector(".chat-sidebar").classList.toggle("hide-bars");
+  document.querySelector(".page-sidebar").classList.toggle("hide-bars");
+  // document.querySelector(".chat-header").classList.toggle("hide-bars");
+}
