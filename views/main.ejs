@@ -43,21 +43,16 @@
 
                 <div class="select-box">
                   <div class="options-container">
-                    <div class="option" id="option1">
-                      <input type="radio" class="radio" />
-                    </div>
                     <%for(var i=0; i<key.length; i++){%>
-
                       <div class="option">
-                        <input type="radio" class="radio" />
+                        <input type="radio" class="radio" autocomplete="off"/>
                         <label for="film"><%= key[i].name %> - <%= key[i].empID %></label>
                       </div>
-
-                   <%}%>
+                    <%}%>
                   </div>
                   <div class="selected">Search</div>
                   <div class="search-box">
-                    <input name="fname" type="text" placeholder="Search Faculty..." />
+                    <input name="fname" type="text" placeholder="Search Faculty..." autocomplete="off"/>
                   </div>
                 </div>
 
@@ -133,7 +128,7 @@
       selected.addEventListener("click", () => {
         optionsContainer.classList.toggle("active");
         // searchBox.value = "";
-        // filterList("");
+        filterList("");
         if (optionsContainer.classList.contains("active")) {
           searchBox.focus();
         }
@@ -143,8 +138,8 @@
         o.addEventListener("click", () => {
           selected.innerHTML = o.querySelector("label").innerHTML;
           // console.log(o.querySelector("label").innerHTML);
-          searchBox.value = o.querySelector("label").innerHTML;
-          console.log(searchBox.value);
+          // searchBox.value = o.querySelector("label").innerHTML;
+          // console.log(searchBox.value);
           optionsContainer.classList.remove("active");
         });
       });
