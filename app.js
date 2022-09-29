@@ -42,24 +42,18 @@ app.get("/signup", function (req, res) {
 });
 
 app.get("/error", function (req, res) {
-    //check user validity first
-  if (Email == "" || Pass == "") {
-      res.redirect("/");
-  }
-  Email = "";
-  Pass = "";
   res.render("error");
 });
 
-app.get("/dashboard", (req, res) => {
+app.get("/dashboard/:id", (req, res) => {
+  const userID = req.params.id;
+  console.log("Catching Inside Dashboard Route: ", userID);
   res.render("dashboard");
+  
 });
 
 app.get("/facultyDetails", (req, res) => {
-  //check user validity first
-  if (Email == "" || Pass == "") {
-    res.redirect("/");
-  } else {
+
     db.FacultyInfo.find(function (err, Info) {
       if (err) {
         console.log(err);
@@ -67,7 +61,7 @@ app.get("/facultyDetails", (req, res) => {
         res.render("facultyDetails", { details: Info });
       }
     });
-  }
+  
 });
 
 app.get("/faculty", function (req, res) {
@@ -220,9 +214,6 @@ app.post("/signin", function (req, res) {
   Email = req.body.ename;
   Pass = req.body.psw;
 
-  console.log("Email : ", Email);
-  console.log("Password : ", Pass);
-
   db.FirefoxUser.find({ email: Email }, function (err, firefoxusers) {
     if (err) {
       console.log(err);
@@ -232,7 +223,8 @@ app.post("/signin", function (req, res) {
     } else {
       firefoxusers.forEach(function (firefoxuser) {
         if (Pass == firefoxuser.password) {
-          res.redirect("/main");
+          console.log("Sending user ID as params : ", firefoxuser.id);
+          res.redirect(`/dashboard/` + firefoxuser.id);
         } else {
           res.redirect("/error");
         }
@@ -278,9 +270,6 @@ app.post("/signup", function (req, res) {
 app.post("/main", function (req, res) {
   const Faculty = req.body.fname;
   const Reason = req.body.reason;
-
-  console.log(Faculty);
-  console.log(Reason);
 
   if (req.body.button1 === "addToList") {
     if (Faculty === "Select one faculty...") {
@@ -336,12 +325,6 @@ app.get("/4m/:id", function (req, res) {
 });
 
 app.get("/main", function (req, res) {
-    
-  //check user validity first
-    if (Email == "" || Pass == "") {
-      res.redirect("/");
-    }
-
     db.Namelist.find(function (err, names) {
     if (err) {
       console.log(err);
