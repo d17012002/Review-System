@@ -206,7 +206,7 @@ app.post("/reset-password/:id/:token", (req, res, next) => {
           if (err) {
             console.log(err);
           }else{
-            res.send("Success");
+            res.redirect("/signin");
           }
         });
   }

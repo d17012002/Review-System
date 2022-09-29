@@ -79,6 +79,7 @@
       <p>Copyright 2022 | Anurag Kumar</p>
     </footer>
 
+    <script src="javaScript/main.js"></script>
     <script>
       // stringify the data passed from router to ejs (within the EJS template only)
       var parsed_data = <%- JSON.stringify(key) %>  
@@ -88,76 +89,6 @@
       function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
       }
-      
-      // let ul = document.getElementById('list');
-      // let li = document.getElementsByClassName('facultyLi');
-      // ul.style.display="none";
-      // function search_faculty() {
-      //   let input = document.getElementById('facultySearchBar').value.toLowerCase();
-      //   for (i = 0; i < li.length; i++) {
-      //     if(input === ""){
-      //       ul.style.display="none";
-      //     }
-      //     else if (!li[i].innerHTML.toLowerCase().includes(input)) {
-      //       ul.style.display="block";
-      //       li[i].style.display="none";
-      //     }
-      //     else if(li[i].innerHTML.toLowerCase().includes(input)){
-      //       ul.style.display="block";
-      //       li[i].style.display="list-item";
-      //     }
-      //     else{
-      //       // UwU
-      //     }
-      //   }
-      //   for(i=0;i<li.length;i++){
-      //     if(li[i].onClick()){
-      //       alert("li clicked");
-      //     }
-      //     else{
-      //       alert("not clicked");
-      //     }
-      //   }
-      // }
-
-      const selected = document.querySelector(".selected");
-      const optionsContainer = document.querySelector(".options-container");
-      const searchBox = document.querySelector(".search-box input");
-      const optionsList = document.querySelectorAll(".option");
-
-      selected.addEventListener("click", () => {
-        optionsContainer.classList.toggle("active");
-        // searchBox.value = "";
-        filterList("");
-        if (optionsContainer.classList.contains("active")) {
-          searchBox.focus();
-        }
-      });
-
-      optionsList.forEach(o => {
-        o.addEventListener("click", () => {
-          selected.innerHTML = o.querySelector("label").innerHTML;
-          // console.log(o.querySelector("label").innerHTML);
-          // searchBox.value = o.querySelector("label").innerHTML;
-          // console.log(searchBox.value);
-          optionsContainer.classList.remove("active");
-        });
-      });
-      searchBox.addEventListener("keyup", function(e) {
-        filterList(e.target.value);
-      });
-      const filterList = searchTerm => {
-        searchTerm = searchTerm.toLowerCase();
-        optionsList.forEach(option => {
-          let label = option.firstElementChild.nextElementSibling.innerText.toLowerCase();
-          if (label.indexOf(searchTerm) != -1) {
-            option.style.display = "block";
-          } else {
-            option.style.display = "none";
-          }
-        });
-      };
-
     </script>
   </body>
   <%- include("./partials/footer.ejs") %>

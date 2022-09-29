@@ -87,7 +87,7 @@ select::-ms-expand {
   position: absolute;
   padding-top: 55px;
   background: white;
-  width: 90%;
+  width: 100%;
   opacity: 0;
   border-radius: 8px;
   overflow: hidden;
@@ -134,7 +134,7 @@ select::-ms-expand {
 .search-box{
   position: relative;
   top: -25px;
-  width: 85%;
+  width: 100%;
 }
 .search-box input {
   /* position: absolute; */
