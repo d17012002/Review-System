@@ -2,7 +2,7 @@ body {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.8;
     font-weight: normal;
-    background: rgb(19, 19, 19);
+    background: RGB(24, 29, 36);
 }
 #myVideo {
     position: fixed;
@@ -44,7 +44,7 @@ th {
 .table-dark {
     color: #fff;
     /* background-color: #343a40; */
-    background: rgb(26, 25, 25); 
+    background: RGB(24, 29, 36); 
 }
 
 .table-dark th,
