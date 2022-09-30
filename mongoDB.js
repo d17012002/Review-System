@@ -31,6 +31,17 @@ const facultyInfoSchema = new mongoose.Schema({
 
 const FacultyInfo = mongoose.model("FacultyInfo", facultyInfoSchema);
 
+const querySchema = new mongoose.Schema({
+  name: String,
+  query: {
+    type: String,
+    required: [true, "query is required"]
+  },
+  replies: [String]
+});
+
+const Query = mongoose.model("Query", querySchema);
+
 const blacklistSchema = new mongoose.Schema({
   faculty: {
     type: String,
@@ -49,11 +60,12 @@ const nameListSchema = new mongoose.Schema({
 const Namelist = mongoose.model("Namelist", nameListSchema);
 
 module.exports.Anurag = new FirefoxUser({
-  name: "Anurag Kumar",
+  name: "Anurag Singh",
   email: "anuragkumar2020@vitbhopal.ac.in",
   password: "anurag123",
 });
 
+module.exports.Query = Query;
 module.exports.FirefoxUser = FirefoxUser;
 module.exports.Blacklist = Blacklist;
 module.exports.Namelist = Namelist;

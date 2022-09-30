@@ -58,5 +58,3 @@ function hide() {
   document.querySelector(".page-sidebar").classList.toggle("hide-bars");
   // document.querySelector(".chat-header").classList.toggle("hide-bars");
 }
-
-

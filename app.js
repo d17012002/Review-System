@@ -7,6 +7,7 @@ const auth = require(__dirname + "/public/javaScript/checkValidation");
 const nodemailer = require("nodemailer");
 
 const jwt = require("jsonwebtoken");
+const { query } = require("express");
 
 var Email = auth.Email;
 var Pass = auth.Pass;
@@ -46,11 +47,57 @@ app.get("/error", function (req, res) {
 });
 
 app.get("/dashboard/:id", (req, res) => {
-  const userID = req.params.id;
-  console.log("Catching Inside Dashboard Route: ", userID);
-  res.render("dashboard");
+
+  db.Query.find(function (err, query) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("dashboard", { key: query });
+    }
+  });
   
 });
+
+app.post("/dashboard/:id", (req, res) => {
+  const userID = req.params.id;
+  
+  
+  if(req.body.submit_btn === "QuerySubmission") {
+    const Query = req.body.newQuery;
+    db.FirefoxUser.findOne({id: userID}, function(err, foundUser){
+      if(err) {
+        console.log(err);
+      }else{
+        const newQuery = new db.Query({
+          name: foundUser.name,
+          query: Query
+        });
+        
+        newQuery.save();
+        res.redirect(`/dashboard/` + userID);
+      }
+    })
+  }
+  else {
+      const Reply = req.body.reply;
+      const Question = req.body.submit_reply;
+
+      db.Query.updateOne(
+        { query: Question },
+        {
+          $push: { replies: Reply }
+        },
+        function (err) {
+          if (err) {
+            console.log(err);
+          } else {
+            console.log("New reply added in the query.");
+          }
+        }
+        );
+        res.redirect(`/dashboard/` + userID);
+  }
+})
 
 app.get("/facultyDetails", (req, res) => {
 
@@ -223,7 +270,6 @@ app.post("/signin", function (req, res) {
     } else {
       firefoxusers.forEach(function (firefoxuser) {
         if (Pass == firefoxuser.password) {
-          console.log("Sending user ID as params : ", firefoxuser.id);
           res.redirect(`/dashboard/` + firefoxuser.id);
         } else {
           res.redirect("/error");
