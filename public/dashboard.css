@@ -8,6 +8,8 @@ body {
   border: 0;
   background-color: RGB(24, 29, 36);
   color: rgb(179, 177, 177);
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 code{
