@@ -1,88 +1,66 @@
+
 <%- include("./partials/header.ejs") %>
+
+
+<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<body>
+  <div class="container clarge">
+      <form id="responseForm" class="submitForm gradient-border" action="/main " method="POST">
+        <div class="csmall">
+          <label for="faculties">Faculty Name</label>
+          <br>
 
   <link rel="stylesheet" href="/main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <body>
-    <div class="container">
-      <center>
-        <div class="col-lg-6 col-lg-12 heading">
-          <h1 id="heading">Sucessfully! signed in...</h1>
-          <p class="subHeading">
-            Click the below button to see the list of faculties you must avoid!
-          </p>
-        </div>
-        <div class="col-lg-6 col-lg-12 btn-div">
-          <center>
-            <form id="responseForm" class="submitForm gradient-border" action="/main " method="POST">
-              <div class="container">
-                <label for="faculties">Faculty Name</label>
-                <br>
-                <!-- <div class="select">
-                  <select name="fname" class="faculty"  required>
-                    <option>Select one faculty...</option>
-          
-                    <%for(var i=0; i<key.length; i++){%>
-                       <option value="<%= key[i].name %> - <%= key[i].empID %>" ><%= key[i].name %> - <%= key[i].empID %></option>
-                       <br>
-                    <%}%>
-  
-                  </select>
-                </div> -->
-
-                <!-- <div class="facultyDropDown">
-                  <input class="searchinputclass" id="facultySearchBar" onkeyup="search_faculty()" type="text" name="search" placeholder="Search Faculty.." autocomplete="off">
-                  <ul id="list">
-                    <%for(var i=0; i<key.length; i++){%>
-                      <input type="radio" class="radio" />
-                      <label class="facultyLi" id="facultyLiid" for="film"><%= key[i].name %> - <%= key[i].empID %></label>
-                      <li><%= key[i].name %> - <%= key[i].empID %></li>
-                   <%}%>
-                  </ul>
-                </div> --> 
-
-                <div class="select-box">
-                  <div class="options-container">
-                    <%for(var i=0; i<key.length; i++){%>
-                      <div class="option">
-                        <input type="radio" class="radio" autocomplete="off"/>
-                        <label for="film"><%= key[i].name %> - <%= key[i].empID %></label>
-                      </div>
-                    <%}%>
-                  </div>
-                  <div class="selected">Search</div>
-                  <div class="search-box">
-                    <input name="fname" type="text" placeholder="Search Faculty..." autocomplete="off"/>
-                  </div>
+          <div class="select-box">
+            <div class="options-container">
+              <%for(var i=0; i<key.length; i++){%>
+                <div class="option">
+                  <input type="radio" class="radio" autocomplete="off"/>
+                  <label for="film"><%= key[i].name %> - <%= key[i].empID %></label>
                 </div>
+              <%}%>
+            </div>
+            <div class="selected">Search</div>
+            <div class="search-box">
+              <input name="fname" type="text" placeholder="Search Faculty..." autocomplete="off"/>
+            </div>
+          </div>
 
-                <br>
-                <label>Reason</label>
-              <textarea name="reason" cols="20" rows="5" placeholder="Drop your reason..." required></textarea>
-              <button id="addToList" name="button1" value="addToList" type="submit">
+          <label class="reviewLabel">Review</label>
+          <textarea name="reason" cols="20" rows="5" placeholder="Post Your Review..." required></textarea>
+          
+          <div class="submit_review">
+            <form>
+              <button class="submit_review_button" id="addToList" name="button1" value="addToList" type="submit">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
                 Submit Review
               </button>
-              </div>
             </form>
+          </div>
         </div>
-        <form action="/main" method="POST">
-          <button class="btn btn-lg btn-outline-light download-button" type="submit" name="button2" value="blacklist">
-            Responses  <i class="fas fa-users"></i>
-          </button>
-        </form>
-      </center>
-    </div>
-    </center>
-    </div>
-
+      </form>
+    <form action="/main" method="POST" class="finalResponseButton">
+      <button type="submit" name="button2" value="blacklist">
+        Responses  
+        <!-- <i class="fas fa-users"></i> -->
+      </button>
+    </form>
     <footer>
       <p>Copyright 2022 | Anurag Kumar</p>
     </footer>
+  </div>
 
     <script src="javaScript/main.js"></script>
     <script>
       // stringify the data passed from router to ejs (within the EJS template only)
-      var parsed_data = <%- JSON.stringify(key) %>  
+      // var parsed_data = <%- JSON.stringify(key) %>  
       //simply link your javascript file and there you can use parsed_data for the pre processing work
       console.log(parsed_data[0]);
 
@@ -90,5 +68,5 @@
         document.getElementById("myDropdown").classList.toggle("show");
       }
     </script>
-  </body>
-  <%- include("./partials/footer.ejs") %>
+</body>
+<%- include("./partials/footer.ejs") %>

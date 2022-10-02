@@ -1,3 +1,4 @@
+const selectBox = document.querySelector(".select-box");
 const selected = document.querySelector(".selected");
 const optionsContainer = document.querySelector(".options-container");
 const searchBox = document.querySelector(".search-box input");
@@ -11,7 +12,6 @@ selected.addEventListener("click", () => {
     searchBox.focus();
   }
 });
-
 optionsList.forEach(o => {
   o.addEventListener("click", () => {
     selected.innerHTML = o.querySelector("label").innerHTML;
@@ -23,6 +23,7 @@ optionsList.forEach(o => {
 });
 searchBox.addEventListener("keyup", function(e) {
   filterList(e.target.value);
+  optionsContainer.classList.add("active");
 });
 const filterList = searchTerm => {
   searchTerm = searchTerm.toLowerCase();
