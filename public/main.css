@@ -39,6 +39,11 @@ input[type='text'] {
   box-sizing: border-box;
 }
 
+.text-container {
+  margin-top: -50px;
+  
+}
+
 textarea {
   width: 100%;
   padding: 12px 20px;
@@ -201,9 +206,9 @@ textarea {
 .submit_review {
   width: 100%;
   position: absolute;
-  background: rgba(0, 0, 0, 0.5);
+  background: #26292e;
   box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 13px 23px rgba(19, 19, 19, 0.6);
   overflow: hidden;
 }
 .submit_review form button {
@@ -220,12 +225,6 @@ textarea {
   letter-spacing: 4px;
 }
 
-.submit_review button:hover {
-  color: black;
-  background-color: white;
-  transition: 0.5s ease-in;
-  font-size: 15px;
-}
 
 .submit_review button span {
   position: absolute;
@@ -327,27 +326,16 @@ textarea {
 }
 .finalResponseButton button {
   position: relative;
-  padding: 16px 80px;
-  background-color: black;
+  padding: 11px 75px;
+  /* background-color: rgb(26, 25, 25); */
   color: white;
-  border: 1px solid white;
+  border: 0.5px solid rgb(108, 130, 255);
   border-radius: 5px;
-  box-shadow: 0 0 1px white, 0 0 5px white, 0 0 10px white, 0 0 20px white;
-  font-size: 1.5rem;
+  font-size: larger;
   opacity: 0.8;
   /* overflow: hidden; */
 }
-/* .finalResponseButton button i {
-  position: absolute;
-  transform: translate(90px, 10px);
-} */
-.finalResponseButton button:hover {
-  opacity: 1;
-}
-.finalResponseButton button:hover:after {
-  transition: 0.5s;
-  content: '\e592';
-}
+
 
 footer {
   position: absolute;
