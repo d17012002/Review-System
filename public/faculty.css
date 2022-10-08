@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 body {
   background: rgb(19, 19, 19);
 }
@@ -120,4 +121,60 @@ h6 {
 
 button {
   color: white;
+}
+
+.searchFaculty{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  max-width: 700px;
+  padding-left: 20px;
+  border-radius: 2px;
+  background: rgba(57, 63, 84, 0.8);
+}
+.searchFaculty:after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 999;
+  height: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  background-position: 0% 0%;
+  background: linear-gradient(to right, #B294FF, #57E6E6, #FEFFB8, #57E6E6, #B294FF, #57E6E6);
+  background-size: 500% auto;
+  animation: gradient 3s linear infinite;
+}
+.searchFaculty input {
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  color: #BFD2FF;
+  vertical-align: middle;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}  
+.searchFaculty input::-webkit-input-placeholder {
+  font-family: 'Open Sans', sans-serif;
+  color: #7881A1;
+}
+.searchFaculty button {
+  color:  #7881A1;
+  font-size: 2.4rem;
+  line-height: 2.4rem;
+  vertical-align: middle;
+  transition: color .25s;
+  background-color: transparent;
+  border: none;
+}
+.searchFaculty button:hover {
+  color: #7881A1;
+}
+@media only screen and (max-width: 600px) {
+  .searchFaculty {
+    width: 90%;
+  }
 }

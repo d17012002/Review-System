@@ -1,5 +1,5 @@
 <%- include("./partials/header.ejs") %>
-
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="/faculty.css">
 
   <body>
@@ -10,36 +10,41 @@
     <div>
       <center>
         <div class="col-lg-12 col-sm-12">
-          <h4>Faculty reviews for FFCS!</h4>
+          <h4>FFCS Faculty Review</h4>
+          <br> <p class="subHeading">Reviews of all these faculties are dropped by your friends and seniors. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an and scrambled it to make a type specimen book.</p><br>
+          <div class="searchFaculty">
+            <input type="text" class="input" id="inputfac" placeholder="Search Faculty...">
+            <button type="submit"><i class='bx bx-right-arrow-alt'></i></button>
+          </div>
           <br>
-          <p class="subHeading">Reviews of all these faculties are dropped by your friends and seniors. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an and scrambled it to make a type specimen book.</p><br>
 
           <%for(var i=0; i<key.length; i++){%>
 
             <button class="accordion">
               <%=i+1%>. <%= key[i].faculty %> <i class="fas fa-user-tie"></i>
             </button>
-
-            <div class="panel">
-              <br>
-              <%for(var j=0; j<key[i].reason.length; j++){%>
-                <p><i style="color: rgb(34, 173, 238);" class="fas fa-arrow-alt-circle-right"></i>
-                  <em id="reviews">
-                    <%= key[i].reason[j] %>
-                  </em>
-                  
-                </p>
-                <%}%>
-            </div>
-              <%}%>
+              
+              <div class="panel">
+                <br>
+                <%for(var j=0; j<key[i].reason.length; j++){%>
+                  <p><i style="color: rgb(34, 173, 238);" class="fas fa-arrow-alt-circle-right"></i>
+                    <em id="reviews">
+                      <%= key[i].reason[j] %>
+                    </em>
+                    
+                  </p>
+                  <%}%>
+                </div>
+          <%}%>
               <br>
     
               <div class="footer">
                 <br>
                 <p class="subHeading">Copyright 2022 | Anurag Kumar</p>
               </div>
+              
+        </div>
       </center>
-    </div>
     </div>
     <script type="module" src="../databaseURL.js"></script>
 
@@ -47,7 +52,7 @@
 
       var acc = document.getElementsByClassName("accordion");
       var i;
-
+      
       for (i = 0; i < acc.length; i++) {
         acc[i].addEventListener("click", function () {
           this.classList.toggle("active");
@@ -59,8 +64,22 @@
           }
         });
       }
+      const input = document.querySelector(".input");
+      input.addEventListener("keyup", function(e) {
+        // alert("vbnm");
+        var text = e.target.value.toLowerCase();
+        for (i = 0; i < acc.length; i++) {
+          if(acc[i].innerHTML.toLowerCase().includes(text)){
+            acc[i].style.display="block";
+          }else{
+            acc[i].style.display="none";
+          }
+        }
+      });
+      
+
     </script>
 
   </body>
-
+  <script src="javaScript/faculty.js"></script>
   <%- include("./partials/footer.ejs") %>
