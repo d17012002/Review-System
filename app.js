@@ -153,10 +153,12 @@ app.post("/forget-password", (req, res) => {
           res.send("Yes this user exists: " + Email + "<br>Password reset link has been sent to your email ID</br>");
 
           const secret = JWT_SECRET + user.password;
+          
           const payload = {
             email: user.email,
             id: user.id
           }
+          
           const token = jwt.sign(payload, secret, {expiresIn: '5m'});
 
           //send email  - code here

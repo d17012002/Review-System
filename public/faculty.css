@@ -131,38 +131,23 @@ button {
   max-width: 700px;
   padding-left: 20px;
   border-radius: 2px;
-  background: rgba(57, 63, 84, 0.8);
+  background: rgba(37, 37, 37, 0.8);
 }
-.searchFaculty:after {
-  content: "";
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  z-index: 999;
-  height: 2px;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
-  background-position: 0% 0%;
-  background: linear-gradient(to right, #B294FF, #57E6E6, #FEFFB8, #57E6E6, #B294FF, #57E6E6);
-  background-size: 500% auto;
-  animation: gradient 3s linear infinite;
-}
+
 .searchFaculty input {
-  font-family: 'Open Sans', sans-serif;
   width: 100%;
-  color: #BFD2FF;
   vertical-align: middle;
+  color: aliceblue;
   background-color: transparent;
   border: none;
   outline: none;
+  font-size: 0.9rem;
 }  
 .searchFaculty input::-webkit-input-placeholder {
-  font-family: 'Open Sans', sans-serif;
-  color: #7881A1;
+  color: #bbbbbb;
 }
 .searchFaculty button {
-  color:  #7881A1;
+  color:  #bebebe;
   font-size: 2.4rem;
   line-height: 2.4rem;
   vertical-align: middle;
@@ -170,11 +155,17 @@ button {
   background-color: transparent;
   border: none;
 }
-.searchFaculty button:hover {
-  color: #7881A1;
-}
+
 @media only screen and (max-width: 600px) {
   .searchFaculty {
     width: 90%;
   }
+}
+
+.fa-search{
+  font-size: 
+  large; position: relative;
+  bottom: 9px; 
+  right: 10px;
+  margin-left: 20px;
 }
