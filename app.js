@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const db = require(__dirname + '/mongoDB.js');
 const auth = require(__dirname + '/public/javaScript/checkValidation');
-
+const amazon = 'anurag sin gh';
 const nodemailer = require('nodemailer');
 
 const jwt = require('jsonwebtoken');
