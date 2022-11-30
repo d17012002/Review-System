@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const db = require(__dirname + '/mongoDB.js');
 const auth = require(__dirname + '/public/javaScript/checkValidation');
-const amazon = 'anurag sin gh';
+
 const nodemailer = require('nodemailer');
 
 const jwt = require('jsonwebtoken');
@@ -57,19 +57,20 @@ app.get('/dashboard/:id', (req, res) => {
 });
 
 app.post('/dashboard/:id', (req, res) => {
-  const userID = req.params.id;
-
   if (req.body.submit_btn === 'QuerySubmission') {
+    const userID = req.params.id;
+    console.log('User id: ', userID);
     const Query = req.body.newQuery;
-    db.FirefoxUser.findOne({ id: userID }, function (err, foundUser) {
+    db.FirefoxUser.findById(userID, function (err, foundUser) {
       if (err) {
         console.log(err);
       } else {
+        console.log('name: ', foundUser);
         const newQuery = new db.Query({
           name: foundUser.name,
           query: Query,
         });
-
+        console.log(' saving this: ', newQuery);
         newQuery.save();
         res.redirect(`/dashboard/` + userID);
       }
