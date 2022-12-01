@@ -1,49 +1,84 @@
 <%- include("./partials/header.ejs") %>
-<link rel="stylesheet" href="/css/underbelly.css">
+<link rel="stylesheet" href="/css/underbelly.css" />
 <body>
-    
-    <div class="header">
-        <h2>Underbelly Canteen</h2>
-        <br>
-        <p class="subHeading">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-        <br>
-        <p style="color: rgb(212, 209, 209); font-size: large;">📍 Underbelly official facebook page: <a href="https://www.facebook.com/underbellyvitbhopal/">Link</a> | Canteen feedback: <i class="fas fa-comments-alt"></i></p>
-    </div>
-      <br>
-      <!-- Photo Grid -->
-      <div class="contain">
-    
-      <div class="row"> 
-        <div class="column">
-            <img src="/Assets/ub/ub8.jpg" style="width:100%">
-            <img src="/Assets/ub/ub2.jpg" style="width:100%">
-            <img src="/Assets/ub/ub3.jpg" style="width:100%">
-            <img src="/Assets/ub/ub4.jpg" style="width:100%">
-        </div>
-        <div class="column">
-            <img src="/Assets/ub/ub6.jpg" style="width:100%">
-            <img src="/Assets/ub/ub1.jpg" style="width:100%">
-            <img src="/Assets/ub/ub12.jpg" style="width:100%">
-            <img src="/Assets/ub/ub5.jpg" style="width:100%">
-            
-        </div>  
-        <div class="column">
-            <img src="/Assets/ub/ub16.jpeg" style="width:100%">
-            <img src="/Assets/ub/ub10.jpg" style="width:100%">
-            <img src="/Assets/ub/ub11.jpg" style="width:100%">
-            <img src="/Assets/ub/ub7.jpg" style="width:100%">
-            
-        </div>
-        <div class="column">
-            <img src="/Assets/ub/ub13.jpg" style="width:100%">
-            <img src="/Assets/ub/ub14.jpeg" style="width:100%">
-            <img src="/Assets/ub/ub15.jpeg" style="width:100%">
-            <img src="/Assets/ub/ub17.jpeg" style="width:100%">
-            <img src="/Assets/ub/ub9.jpg" style="width:100%">
-          
-        </div>
+  <div class="header">
+    <h2>Underbelly Canteen</h2>
+    <br />
+    <p class="subHeading">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur.
+    </p>
+    <br />
+    <p style="color: rgb(212, 209, 209); font-size: large">
+      📍 Underbelly official facebook page:
+      <a href="https://www.facebook.com/underbellyvitbhopal/">Link</a> | <a href="#" id="myBtn"> Canteen
+      feedback: <i class="fas fa-comments-alt"></i> </a>
+    </p>
+  </div>
+  <br />
+  <!-- Photo Grid -->
+  <div class="contain">
+    <div class="row">
+      <div class="column">
+        <img src="/Assets/ub/ub8.jpg" style="width: 100%" />
+        <img src="/Assets/ub/ub2.jpg" style="width: 100%" />
+        <img src="/Assets/ub/ub3.jpg" style="width: 100%" />
+        <img src="/Assets/ub/ub4.jpg" style="width: 100%" />
       </div>
-          
+      <div class="column">
+        <img src="/Assets/ub/ub6.jpg" style="width: 100%" />
+        <img src="/Assets/ub/ub1.jpg" style="width: 100%" />
+        <img src="/Assets/ub/ub12.jpg" style="width: 100%" />
+        <img src="/Assets/ub/ub5.jpg" style="width: 100%" />
+      </div>
+      <div class="column">
+        <img src="/Assets/ub/ub16.jpeg" style="width: 100%" />
+        <img src="/Assets/ub/ub10.jpg" style="width: 100%" />
+        <img src="/Assets/ub/ub11.jpg" style="width: 100%" />
+        <img src="/Assets/ub/ub7.jpg" style="width: 100%" />
+      </div>
+      <div class="column">
+        <img src="/Assets/ub/ub13.jpg" style="width: 100%" />
+        <img src="/Assets/ub/ub14.jpeg" style="width: 100%" />
+        <img src="/Assets/ub/ub15.jpeg" style="width: 100%" />
+        <img src="/Assets/ub/ub17.jpeg" style="width: 100%" />
+        <img src="/Assets/ub/ub9.jpg" style="width: 100%" />
+      </div>
     </div>
+  </div>
+
+  <!-- Modal for feedback -->
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span> <br>
+      <span>
+        <form autocomplete="off" method="post" class="input-feedback">
+          <input
+          class="feedback"
+          type="text"
+          class="form-control"
+          placeholder="How was your experience in underbelly ??"
+          v-model="message"
+          name="newFeedback"
+          required
+          />
+          <button name="submit_btn" value="QuerySubmission" type="submit" class="btn btn-primary">Post</button>
+        </form>
+
+      </span>
+      <br>
+
+      <%for(var i=0; i<key.length; i++){%>
+        <p class="feed">📍 <%= key[i].feedback %> </p>
+      <%}%>
+
+    </div>
+  </div>
+  <script src="javaScript/underbelly.js"></script>
 </body>
 <%- include("./partials/footer.ejs") %>

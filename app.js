@@ -47,7 +47,13 @@ app.get('/error', function (req, res) {
 });
 
 app.get('/ub', function (req, res) {
-  res.render('underbelly');
+  db.ubFeedback.find(function (err, feed) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('underbelly', { key: feed });
+    }
+  });
 });
 
 app.get('/dashboard/:id', (req, res) => {
@@ -371,6 +377,15 @@ app.get('/main', function (req, res) {
       res.render('main', { key: names });
     }
   });
+});
+
+app.post('/ub', function (req, res) {
+  const feed = req.body.newFeedback;
+  const newFeedback = new db.ubFeedback({
+    feedback: feed,
+  });
+  newFeedback.save();
+  res.redirect('/ub');
 });
 
 app.listen(process.env.PORT || 3000, function () {
