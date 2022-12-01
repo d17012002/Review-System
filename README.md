@@ -1,2 +1,2 @@
 # review-system
-It is a database project based on crowd sourcing model which lets you enter the feedback keeping your identity hidden.
+It is a dedicated database project based on crowd sourcing model for VIT Bhopal University which lets you ask your queries, drop feedback and get all details of the university.
