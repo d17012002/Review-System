@@ -11,9 +11,8 @@ body {
   min-height: 100%;
 }
 
-
 .download-button {
-  margin: 5% 1% 2% ;
+  margin: 5% 1% 2%;
   width: 150px;
   position: relative;
 }
@@ -41,7 +40,7 @@ footer {
   color: rgba(189, 189, 189, 0.397);
 }
 
-.logo{
+.logo {
   position: relative;
   padding: 5%;
 }
@@ -52,7 +51,7 @@ footer {
   color: rgb(163, 163, 163);
 }
 
-.info{
+.info {
   color: rgba(163, 163, 163, 0.932);
 }
 

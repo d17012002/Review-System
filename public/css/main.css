@@ -41,7 +41,6 @@ input[type='text'] {
 
 .text-container {
   margin-top: -50px;
-  
 }
 
 textarea {
@@ -200,8 +199,6 @@ textarea {
   border-radius: 8px 8px 8px 8px;
 }
 
-
-
 /* submit review button  */
 .submit_review {
   width: 100%;
@@ -224,7 +221,6 @@ textarea {
   margin-top: 40px;
   letter-spacing: 4px;
 }
-
 
 .submit_review button span {
   position: absolute;
@@ -336,7 +332,6 @@ textarea {
   /* overflow: hidden; */
 }
 
-
 footer {
   position: absolute;
   bottom: 0;
@@ -345,5 +340,4 @@ footer {
   text-align: center;
   font-size: small;
   color: rgba(187, 187, 187, 0.315);
-  
 }

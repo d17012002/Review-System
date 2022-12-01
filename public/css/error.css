@@ -37,7 +37,7 @@ body {
 }
 
 .notfound .notfound-404 h1 {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
 
   background: rgb(19, 19, 19);
   font-size: 220px;
@@ -52,14 +52,13 @@ body {
 }
 
 .notfound p {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   color: #c9c9c9;
   font-size: 16px;
   font-weight: 400;
   margin-top: 0px;
   margin-bottom: 15px;
 }
-
 
 @media only screen and (max-width: 480px) {
   .notfound .notfound-404 {

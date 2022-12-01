@@ -12,7 +12,7 @@ body {
   overflow-y: hidden;
 }
 
-code{
+code {
   background: #232323;
   color: #ee7373;
 }
@@ -27,7 +27,7 @@ code{
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
-  flex-direction: column; 
+  flex-direction: column;
 }
 
 .header {
@@ -41,7 +41,7 @@ code{
 }
 
 .page {
-  min-height:0;
+  min-height: 0;
   -webkit-box-flex: 1;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -153,143 +153,140 @@ code{
     padding: 0;
     border-left: 0 solid #1b1b1b;
   }
-  .head-txt{
+  .head-txt {
     display: none;
   }
 }
 
-
 /* Accordion */
-*, *:after, *:before {
-	box-sizing: border-box;
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
 }
 
 :root {
-	font-size: 16px;
+  font-size: 16px;
 }
 
-
 *:focus {
-	outline: none;
+  outline: none;
 }
 
 .chat-content > div {
   margin-top: 10px;
-	width: 93%;
-	margin-left: auto;
-	margin-right: auto;
+  width: 93%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 details div {
-	border-left: 1px solid #272727;
-	border-right: 1px solid #272727;
-	border-bottom: 1px solid #272727;
-	padding: 15px;
+  border-left: 1px solid #272727;
+  border-right: 1px solid #272727;
+  border-bottom: 1px solid #272727;
+  padding: 15px;
 }
 
 details div > * + * {
-	margin-top: 1.5em;
+  margin-top: 1.5em;
 }
 
 details + details {
-	margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 
 summary {
-	list-style: none;
+  list-style: none;
 }
 
 summary::-webkit-details-marker {
-	display: none;
+  display: none;
 }
 
 summary {
-	border: 1px solid #272727;
-	padding: 20px;
-	cursor: pointer;
-	position: relative;
-	padding-left: calc(1.75rem + .75rem + .75rem);
+  border: 1px solid #272727;
+  padding: 20px;
+  cursor: pointer;
+  position: relative;
+  padding-left: calc(1.75rem + 0.75rem + 0.75rem);
 }
 
 summary:before {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	left: .75rem;
-	content: "↓";
-	width: 1.75rem;
-	height: 1.75rem;
-	background-color: RGB(29, 34, 41);
-	color: #FFF;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	flex-shrink: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0.75rem;
+  content: '↓';
+  width: 1.75rem;
+  height: 1.75rem;
+  background-color: RGB(29, 34, 41);
+  color: #fff;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 details[open] summary {
-	background-color: RGB(29, 34, 41);
+  background-color: RGB(29, 34, 41);
 }
 
 details[open] summary:before {
-	content: "↑";
+  content: '↑';
 }
 
 summary:hover {
-	background-color: RGB(29, 34, 41);
+  background-color: RGB(29, 34, 41);
 }
 
 a {
-	box-shadow: 0 0.5px 0 0;
+  box-shadow: 0 0.5px 0 0;
 }
-
-
 
 code {
-	font-family: monospace;
-	font-weight: 600;
+  font-family: monospace;
+  font-weight: 600;
 }
 
-.profile-icon{
+.profile-icon {
   margin-top: 10px;
   margin-left: -10px;
   margin-bottom: 4px;
 }
 
-hr{
+hr {
   margin-bottom: 30px;
   background: #272727;
   border-bottom-left-radius: 50%;
   border-top-left-radius: 50%;
 }
 
-i{
+i {
   font-size: 22px;
 }
 
-.reply{
+.reply {
   margin: 5px;
   width: 50%;
   border: 1px solid #272727;
 }
 
-.sign-out{
+.sign-out {
   margin-left: 20px;
-   margin-top: 200px;
+  margin-top: 200px;
 }
 
-.hide-bars{
+.hide-bars {
   display: none;
 }
 
-
 /* CARDS */
 
-.container{
+.container {
   position: relative;
 }
 
-.container .card{
+.container .card {
   position: relative;
   width: 220px;
   height: 280px;
@@ -298,7 +295,7 @@ i{
   overflow: hidden;
 }
 
-.container .card:before{
+.container .card:before {
   content: '';
   position: absolute;
   top: 0;
@@ -310,11 +307,11 @@ i{
   transition: 0.5s ease-in-out;
 }
 
-.container .card:hover:before{
+.container .card:hover:before {
   clip-path: circle(300px at 80% -20%);
 }
 
-.container .card:after{
+.container .card:after {
   content: 'FFCS';
   position: absolute;
   top: 40%;
@@ -322,10 +319,10 @@ i{
   font-size: 7em;
   font-weight: 800;
   font-style: italic;
-  color: rgba(250, 207, 207, 0.05)
+  color: rgba(250, 207, 207, 0.05);
 }
 
-.container .card .imgBx{
+.container .card .imgBx {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -335,13 +332,12 @@ i{
   transition: 0.5s;
 }
 
-.container .card:hover .imgBx{
+.container .card:hover .imgBx {
   top: 0%;
   transform: translateY(0%);
-    
 }
 
-.container .card .imgBx img{
+.container .card .imgBx img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -349,7 +345,7 @@ i{
   width: 270px;
 }
 
-.container .card .contentBx{
+.container .card .contentBx {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -359,11 +355,11 @@ i{
   z-index: 10;
 }
 
-.container .card:hover .contentBx{
+.container .card:hover .contentBx {
   height: 210px;
 }
 
-.container .card .contentBx h2{
+.container .card .contentBx h2 {
   position: relative;
   font-weight: 600;
   letter-spacing: 1px;
@@ -371,30 +367,33 @@ i{
   margin: 0;
 }
 
-.container .card .contentBx .size, .container .card .contentBx .color {
+.container .card .contentBx .size,
+.container .card .contentBx .color {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 8px 20px;
-  transition: 0.5s;opacity: 0;
+  transition: 0.5s;
+  opacity: 0;
   visibility: hidden;
   padding-top: 0;
   padding-bottom: 0;
 }
 
-.container .card:hover .contentBx .size{
+.container .card:hover .contentBx .size {
   opacity: 1;
   visibility: visible;
   transition-delay: 0.5s;
 }
 
-.container .card:hover .contentBx .color{
+.container .card:hover .contentBx .color {
   opacity: 1;
   visibility: visible;
   transition-delay: 0.6s;
 }
 
-.container .card .contentBx .size h3, .container .card .contentBx .color h3{
+.container .card .contentBx .size h3,
+.container .card .contentBx .color h3 {
   color: #fff;
   font-weight: 300;
   font-size: 14px;
@@ -403,7 +402,7 @@ i{
   margin-right: 10px;
 }
 
-.container .card .contentBx .size span{
+.container .card .contentBx .size span {
   width: 26px;
   height: 26px;
   text-align: center;
@@ -419,11 +418,11 @@ i{
   cursor: pointer;
 }
 
-.container .card .contentBx .size span:hover{
+.container .card .contentBx .size span:hover {
   background: #9bdc28;
 }
 
-.container .card .contentBx .color span{
+.container .card .contentBx .color span {
   width: 20px;
   height: 20px;
   background: #ff0;
@@ -432,19 +431,19 @@ i{
   cursor: pointer;
 }
 
-.container .card .contentBx .color span:nth-child(2){
+.container .card .contentBx .color span:nth-child(2) {
   background: #9bdc28;
 }
 
-.container .card .contentBx .color span:nth-child(3){
+.container .card .contentBx .color span:nth-child(3) {
   background: #03a9f4;
 }
 
-.container .card .contentBx .color span:nth-child(4){
+.container .card .contentBx .color span:nth-child(4) {
   background: #e91e63;
 }
 
-.container .card .contentBx a{
+.container .card .contentBx a {
   display: inline-block;
   padding: 10px 20px;
   background: #fff;
@@ -459,14 +458,13 @@ i{
   margin-top: 0;
 }
 
-.container .card:hover .contentBx a{
+.container .card:hover .contentBx a {
   opacity: 1;
   transform: translateY(0px);
   transition-delay: 0.55s;
-  
 }
 
-h6{
+h6 {
   color: white;
   font-size: large;
   font-weight: 700;
@@ -474,7 +472,7 @@ h6{
   bottom: 12px;
 }
 
-.cc .cd:before{
+.cc .cd:before {
   content: '';
   position: absolute;
   top: 0;
@@ -486,7 +484,7 @@ h6{
   transition: 0.5s ease-in-out;
 }
 
-.cc .cd:after{
+.cc .cd:after {
   content: 'Details';
   position: absolute;
   top: 40%;
@@ -494,10 +492,10 @@ h6{
   font-size: 7em;
   font-weight: 800;
   font-style: italic;
-  color: rgba(250, 207, 207, 0.05)
+  color: rgba(250, 207, 207, 0.05);
 }
 
-input{
+input {
   border-radius: 5px;
 }
 
@@ -508,23 +506,23 @@ input{
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey; 
+  box-shadow: inset 0 0 5px grey;
   border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   /* box-shadow: inset 0 0 5px grey;  */
-  background: grey; 
+  background: grey;
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #c73333; 
+  background: #c73333;
 }
 
-a{
+a {
   color: RGB(129, 134, 151);
 }
 a:hover {

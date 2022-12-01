@@ -35,7 +35,7 @@ em {
   .subHeading {
     width: 100%;
   }
-  .footer{
+  .footer {
     display: none;
     height: 0px;
   }
@@ -84,7 +84,7 @@ h6 {
 }
 
 .accordion:after {
-  content: "\002B";
+  content: '\002B';
   color: rgb(27, 27, 27);
   font-weight: bold;
   float: right;
@@ -92,7 +92,7 @@ h6 {
 }
 
 .active:after {
-  content: "\2212";
+  content: '\2212';
 }
 
 .panel {
@@ -123,7 +123,7 @@ button {
   color: white;
 }
 
-.searchFaculty{
+.searchFaculty {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -142,16 +142,16 @@ button {
   border: none;
   outline: none;
   font-size: 0.9rem;
-}  
+}
 .searchFaculty input::-webkit-input-placeholder {
   color: #bbbbbb;
 }
 .searchFaculty button {
-  color:  #bebebe;
+  color: #bebebe;
   font-size: 2.4rem;
   line-height: 2.4rem;
   vertical-align: middle;
-  transition: color .25s;
+  transition: color 0.25s;
   background-color: transparent;
   border: none;
 }
@@ -162,10 +162,10 @@ button {
   }
 }
 
-.fa-search{
-  font-size: 
-  large; position: relative;
-  bottom: 9px; 
+.fa-search {
+  font-size: large;
+  position: relative;
+  bottom: 9px;
   right: 10px;
   margin-left: 20px;
 }
