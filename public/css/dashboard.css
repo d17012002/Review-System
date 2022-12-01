@@ -145,6 +145,8 @@ code {
   border-left: 1px solid #1b1b1b;
   padding: 10px;
   width: 270px;
+  overflow-y: scroll;
+  /* overflow-x: scroll; */
 }
 
 @media only screen and (max-width: 800px) {

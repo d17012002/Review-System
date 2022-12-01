@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body {
+  margin: 0;
+  background: rgb(19, 19, 19);
+}
+h2 {
+  margin-top: 50px;
+  color: ivory;
+}
+.contain {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.subHeading {
+  color: rgb(122, 122, 122);
+  padding-left: 5%;
+  padding-right: 5%;
+  font-weight: 400;
+}
+
+.header {
+  text-align: center;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+}
+
+.row {
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  -ms-flex: 25%;
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}

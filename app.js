@@ -46,6 +46,10 @@ app.get('/error', function (req, res) {
   res.render('error');
 });
 
+app.get('/ub', function (req, res) {
+  res.render('underbelly');
+});
+
 app.get('/dashboard/:id', (req, res) => {
   db.Query.find(function (err, query) {
     if (err) {
@@ -57,8 +61,8 @@ app.get('/dashboard/:id', (req, res) => {
 });
 
 app.post('/dashboard/:id', (req, res) => {
+  const userID = req.params.id;
   if (req.body.submit_btn === 'QuerySubmission') {
-    const userID = req.params.id;
     console.log('User id: ', userID);
     const Query = req.body.newQuery;
     db.FirefoxUser.findById(userID, function (err, foundUser) {
