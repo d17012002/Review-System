@@ -190,7 +190,7 @@ app.post('/forget-password', (req, res) => {
             subject: 'Password Reset Link - Review System',
             text: `Do not share this link with anyone. Link will be active for 5 mins only. 
             
-            https://vitb-review-system.herokuapp.com/reset-password/${user.id}/${token} 
+            https://vitb-review-system.onrender.com/reset-password/${user.id}/${token} 
             
             Regards Anurag`,
           };
