@@ -18,7 +18,7 @@ body {
   position: relative;
 }
 .submitForm {
-  width: fit-content;
+  width: 70%;
   max-width: 350px;
   min-height: 410px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -151,7 +151,6 @@ textarea {
 }
 .select-box .option:hover {
   background: #26292e;
-  border-radius: 5px;
   color: #eaeff5;
 }
 .select-box .option input:hover {
@@ -197,6 +196,10 @@ textarea {
 .select-box .options-container::-webkit-scrollbar-thumb {
   background: #464749;
   border-radius: 8px 8px 8px 8px;
+}
+
+textarea {
+  border-radius: 8px;
 }
 
 /* submit review button  */
