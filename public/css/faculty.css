@@ -77,8 +77,8 @@ h6 {
   background: rgb(31, 26, 117);
   background: linear-gradient(
     90deg,
-    rgb(23, 20, 105) 3%,
-    rgba(34, 34, 142, 1) 22%,
+    rgb(42, 128, 150) 3%,
+    rgb(48, 120, 179) 22%,
     rgb(252, 90, 90) 100%
   );
 }

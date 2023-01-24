@@ -1,0 +1,28 @@
+<%- include("./partials/header.ejs") %>
+
+<link rel="stylesheet" href="/css/abort.css" />
+
+<body>
+  <div class="box">
+    <a class="button" href="#popup1"></a>
+  </div>
+
+  <div id="popup1" class="overlay">
+    <div class="popup">
+      <p class="heading">Submission Denied !</p>
+      <a class="close" href="/main">&times;</a>
+      <div class="content">
+        Your response goes against the rules we've laid down. Please check the instructions once again and try submitting your review once more.
+        <br /><br />
+        Be kind and gentle with your words.
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  setTimeout(function () {
+    document.querySelector('.button').click();
+  }, 1500);
+</script>
+
+<%- include("./partials/footer.ejs") %>

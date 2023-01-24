@@ -27,6 +27,7 @@ const { users } = require('./routes/userRoute');
 const { displayMain, FFCSreview } = require('./routes/mainRoute');
 
 const { displayFacultyInfo } = require('./routes/facultyinfoRoute');
+const { displayAbort } = require('./routes/abortRoute');
 const {
   displayDashboard,
   dashboardQueries,
@@ -43,6 +44,7 @@ const { displayReset, resetPass } = require('./routes/resetPassRoute');
 app.get('/ub', displayUb);
 app.get('/4m/:id', users);
 app.get('/', displayHome);
+app.get('/abort', displayAbort);
 app.get('/main', displayMain);
 app.get('/error', displayError);
 app.get('/signin', displaySignin);

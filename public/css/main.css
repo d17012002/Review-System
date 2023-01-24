@@ -6,6 +6,59 @@
 body {
   background: rgb(19, 19, 19);
 }
+
+#container {
+  width: 100%;
+  height: auto;
+  text-align: right;
+  position: relative;
+  right: 6%;
+  bottom: 9%;
+  font-weight: 500;
+  color: #ccc;
+}
+
+.link {
+  position: relative;
+  font-size: large;
+  display: inline-block;
+}
+
+.link .tip {
+  font-weight: 400;
+  visibility: hidden;
+  font-size: medium;
+  width: 0;
+  height: 100px;
+  opacity: 0;
+  background-color: #242020a6;
+  color: rgb(255, 255, 255);
+  text-align: left;
+  padding: 8px;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: 105%;
+  transition: 0.5s ease;
+  overflow: hidden;
+  margin-right: 20px;
+  border: 1px solid rgb(41, 41, 41);
+  border-radius: 5px;
+}
+
+.link:hover .tip {
+  visibility: visible;
+  width: 230px;
+  height: auto;
+  opacity: 1;
+}
+
+@media only screen and (max-width: 600px) {
+  .link {
+    visibility: hidden;
+  }
+}
+
 .clarge {
   display: flex;
   flex-direction: column;
