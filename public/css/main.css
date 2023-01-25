@@ -18,6 +18,13 @@ body {
   color: #ccc;
 }
 
+.back {
+  position: absolute;
+  left: 2%;
+  top: 2%;
+  z-index: 100;
+}
+
 .link {
   position: relative;
   font-size: large;

@@ -1,3 +1,9 @@
+var express = require('express');
+var app = express();
+
+var cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
 const sdk = require('api')('@eden-ai/v2.0#cyr6o4ld8rjs4k');
 const db = require('../mongoDB');
 sdk.auth(
@@ -15,6 +21,11 @@ const displayMain = (req, res) => {
 };
 
 const FFCSreview = async (req, res) => {
+  if (req.body.back_btn === 'back') {
+    var header = req.headers.cookie;
+    var token = header.split('=');
+    res.redirect('/dashboard/' + token[1]);
+  }
   const Faculty = req.body.fname;
   const Reason = req.body.reason;
 

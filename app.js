@@ -39,6 +39,8 @@ const {
 } = require('./routes/forgetPassRoute');
 
 const { displayReset, resetPass } = require('./routes/resetPassRoute');
+const { back } = require('./routes/facultyRoute');
+const { backBtn } = require('./routes/facultyinfoRoute');
 
 //GET requests
 app.get('/ub', displayUb);
@@ -58,6 +60,8 @@ app.get('/reset-password/:id/:token', displayReset);
 //POST requests
 app.post('/ub', ubFeedback);
 app.post('/main', FFCSreview);
+app.post('/faculty', back);
+app.post('/facultyDetails', backBtn);
 app.post('/signup', createAccount);
 app.post('/signin', userAuthentication);
 app.post('/dashboard/:id', dashboardQueries);

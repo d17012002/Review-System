@@ -14,4 +14,10 @@ const facultyReview = (req, res) => {
   });
 };
 
-module.exports = { facultyReview };
+const back = (req, res) => {
+  if (req.body.back_btn === 'back') {
+    res.redirect('/main');
+  }
+};
+
+module.exports = { facultyReview, back };

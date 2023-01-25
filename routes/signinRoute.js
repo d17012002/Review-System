@@ -1,4 +1,9 @@
 const db = require('../mongoDB');
+const express = require('express');
+const app = express();
+
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
 
 const displaySignin = (req, res) => {
   res.render('signin');
@@ -17,7 +22,12 @@ const userAuthentication = (req, res) => {
     } else {
       firefoxusers.forEach(function (firefoxuser) {
         if (Pass == firefoxuser.password) {
-          res.redirect(`/dashboard/` + firefoxuser.id);
+          res
+            .cookie('user_id', firefoxuser.id, {
+              expires: new Date(Date.now() + 864000000),
+              httpOnly: true,
+            })
+            .redirect(`/dashboard/` + firefoxuser.id);
         } else {
           res.redirect('/error');
         }

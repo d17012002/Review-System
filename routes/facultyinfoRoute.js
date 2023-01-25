@@ -1,3 +1,8 @@
+var express = require('express');
+var app = express();
+
+var cookieParser = require('cookie-parser');
+app.use(cookieParser());
 const db = require('../mongoDB');
 
 const displayFacultyInfo = (req, res) => {
@@ -10,4 +15,12 @@ const displayFacultyInfo = (req, res) => {
   });
 };
 
-module.exports = { displayFacultyInfo };
+const backBtn = (req, res) => {
+  if (req.body.back_btn === 'back') {
+    var header = req.headers.cookie;
+    var token = header.split('=');
+    res.redirect('/dashboard/' + token[1]);
+  }
+};
+
+module.exports = { displayFacultyInfo, backBtn };
