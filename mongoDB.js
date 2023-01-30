@@ -72,9 +72,23 @@ module.exports.Anurag = new FirefoxUser({
   password: 'anurag123',
 });
 
+const gallerySchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  image: {
+    data: Buffer,
+    contentType: String,
+  },
+});
+
+const galleryImage = mongoose.model('galleryImage', gallerySchema);
+
 module.exports.Query = Query;
 module.exports.FirefoxUser = FirefoxUser;
 module.exports.Blacklist = Blacklist;
 module.exports.Namelist = Namelist;
 module.exports.FacultyInfo = FacultyInfo;
 module.exports.ubFeedback = ubFeedback;
+module.exports.galleryImage = galleryImage;

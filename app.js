@@ -11,19 +11,13 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 const { displayHome } = require('./routes/homeRoute');
-
 const { displaySignin, userAuthentication } = require('./routes/signinRoute');
-
 const { displaySignup, createAccount } = require('./routes/signupRoute');
-
 const { displayError } = require('./routes/errorRoute');
-
 const { displayUb, ubFeedback } = require('./routes/ubRoute');
 
 const { facultyReview } = require('./routes/facultyRoute');
-
 const { users } = require('./routes/userRoute');
-
 const { displayMain, FFCSreview } = require('./routes/mainRoute');
 
 const { displayFacultyInfo } = require('./routes/facultyinfoRoute');
@@ -42,27 +36,31 @@ const { displayReset, resetPass } = require('./routes/resetPassRoute');
 const { back } = require('./routes/facultyRoute');
 const { backBtn } = require('./routes/facultyinfoRoute');
 
+const { displayGallery, uploadImg } = require('./routes/galleryRoute');
+
 //GET requests
 app.get('/ub', displayUb);
 app.get('/4m/:id', users);
 app.get('/', displayHome);
-app.get('/abort', displayAbort);
 app.get('/main', displayMain);
 app.get('/error', displayError);
+app.get('/abort', displayAbort);
 app.get('/signin', displaySignin);
 app.get('/signup', displaySignup);
 app.get('/faculty', facultyReview);
+app.get('/gallery', displayGallery);
 app.get('/dashboard/:id', displayDashboard);
 app.get('/forget-password', displayForgetPass);
 app.get('/facultyDetails', displayFacultyInfo);
 app.get('/reset-password/:id/:token', displayReset);
 
 //POST requests
+app.post('/faculty', back);
 app.post('/ub', ubFeedback);
 app.post('/main', FFCSreview);
-app.post('/faculty', back);
-app.post('/facultyDetails', backBtn);
+app.post('gallery', uploadImg);
 app.post('/signup', createAccount);
+app.post('/facultyDetails', backBtn);
 app.post('/signin', userAuthentication);
 app.post('/dashboard/:id', dashboardQueries);
 app.post('/forget-password', generateResetLink);
