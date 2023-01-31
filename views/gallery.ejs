@@ -2,6 +2,33 @@
 
 <link rel="stylesheet" href="/css/gallery.css" />
 <body>
-    frontend here
+    <div class="container-all">
+      <div class="header">
+        <h2>Photo Gallery VIT'B</h2><br>
+        <p class="subHeading">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      
+      <div class="img-upload">
+        <br>
+        <hr>
+        <form action="/gallery" method="post" enctype="multipart/form-data">
+            <label for="">Image Title: </label>
+            <input name="name" class="img-title" type="text" required>
+            <label for="">Upload Image: </label>
+            <input name="image" class="file-upload" type="file" required> | 
+            <button class="upload-btn" type="submit">Upload</button>
+        </form>
+      </div>
+      <hr>
+      <br>
+      <%for(var i=key.length - 1; i>=0; i--){%>
+        <div class="container">
+            <!-- <img src="../uploads/1675163554278.png" alt="" /> -->
+            <img src="<%= key[i].image.data %>" alt="" />
+            <span class="title"><%= key[i].name %></span>
+        </div>
+      <%}%>
+      </div>
+  </div>
+  <br><br>
 </body>
 <%- include("./partials/footer.ejs") %>

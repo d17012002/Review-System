@@ -58,7 +58,7 @@ app.get('/reset-password/:id/:token', displayReset);
 app.post('/faculty', back);
 app.post('/ub', ubFeedback);
 app.post('/main', FFCSreview);
-app.post('gallery', uploadImg);
+app.post('/gallery', uploadImg);
 app.post('/signup', createAccount);
 app.post('/facultyDetails', backBtn);
 app.post('/signin', userAuthentication);

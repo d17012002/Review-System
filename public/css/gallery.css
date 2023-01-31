@@ -1,0 +1,144 @@
+body,
+html {
+  margin: 0;
+  background: rgb(19, 19, 19);
+}
+
+.container-all {
+  width: fit-content;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.header {
+  margin-top: 30px;
+  color: ivory;
+  text-align: center;
+}
+
+.subHeading {
+  color: rgb(139, 139, 139);
+  padding-left: 5%;
+  padding-right: 5%;
+  font-weight: 400;
+}
+
+label {
+  margin-left: 20px;
+}
+
+input {
+  margin-left: 10px;
+}
+
+.img-upload {
+  color: rgb(221, 221, 221);
+  font-weight: 500;
+  text-align: center;
+}
+
+button {
+  margin-left: 2px;
+}
+
+@media screen and (max-width: 600px) {
+  .img-upload {
+    text-align: left;
+  }
+  input {
+    margin-left: 20px;
+  }
+  button {
+    margin-top: 5px;
+    margin-left: 20px;
+  }
+}
+
+.img-title {
+  background-color: rgb(230, 229, 229);
+  border-radius: 5px;
+}
+
+.upload-btn {
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 5px;
+}
+
+.upload-btn:hover {
+  background-color: rgb(153, 153, 153);
+}
+
+hr {
+  background-color: rgb(63, 63, 63);
+  width: 65%;
+  border-radius: 5000%;
+}
+
+.container {
+  width: calc(33% - 6px);
+  overflow: hidden;
+  height: fit-content;
+  margin: 3px;
+  padding: 0;
+  display: block;
+  position: relative;
+  float: left;
+}
+img {
+  width: 100%;
+  transition-duration: 0.3s;
+  max-width: 100%;
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+}
+.title {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  top: 35%;
+  display: none;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 1.6em;
+  text-shadow: 1px 5px 10px black;
+  transition-duration: 0.3s;
+}
+.text {
+  position: absolute;
+  top: 70%;
+  cursor: pointer;
+  max-width: 80%;
+  text-align: center;
+  left: 50%;
+  text-shadow: 1px 5px 10px black;
+  font-size: 1em;
+  display: none;
+  margin-right: -50%;
+  transition-duration: 0.3s;
+  transform: translate(-50%, -50%);
+}
+.container:hover img {
+  transform: scale(1.2);
+  transition-duration: 0.3s;
+  filter: grayscale(50%);
+  opacity: 0.7;
+}
+.container:hover span {
+  color: white;
+  display: block;
+  transition-duration: 0.3s;
+}
+@media only screen and (max-width: 900px) {
+  .container {
+    width: calc(50% - 6px);
+  }
+}
+@media only screen and (max-width: 400px) {
+  .container {
+    width: 100%;
+  }
+}

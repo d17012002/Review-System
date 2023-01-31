@@ -1,19 +1,29 @@
 const multer = require('multer');
+const path = require('path');
 const db = require('../mongoDB');
-//testImage  = img
+
 const Storage = multer.diskStorage({
-  destination: 'uploads',
+  destination: (req, file, cb) => {
+    cb(null, './public/uploads');
+  },
   filename: (req, file, cb) => {
-    cb(null, file.originalname);
+    console.log(file);
+    cb(null, Date.now() + path.extname(file.originalname));
   },
 });
 
 const upload = multer({
   storage: Storage,
-}).single('img');
+}).single('image');
 
 const displayGallery = (req, res) => {
-  res.render('gallery');
+  db.galleryImage.find(function (err, images) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('gallery', { key: images });
+    }
+  });
 };
 
 const uploadImg = (req, res) => {
@@ -24,10 +34,11 @@ const uploadImg = (req, res) => {
       const newImage = new db.galleryImage({
         name: req.body.name,
         image: {
-          data: req.body.filename,
+          data: '/uploads/' + req.file.filename,
           contentType: 'image/png',
         },
       });
+      console.log(newImage);
       newImage
         .save()
         .then(() => res.redirect('/gallery'))
