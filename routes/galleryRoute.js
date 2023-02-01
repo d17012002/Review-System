@@ -2,6 +2,12 @@ const multer = require('multer');
 const path = require('path');
 const db = require('../mongoDB');
 
+var express = require('express');
+var app = express();
+
+var cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
 const Storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, './public/uploads');
@@ -27,6 +33,11 @@ const displayGallery = (req, res) => {
 };
 
 const uploadImg = (req, res) => {
+  if (req.body.back_btn === 'back') {
+    var header = req.headers.cookie;
+    var token = header.split('=');
+    res.redirect('/dashboard/' + token[1]);
+  }
   upload(req, res, (err) => {
     if (err) {
       console.log(err);

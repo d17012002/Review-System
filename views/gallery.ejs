@@ -2,6 +2,10 @@
 
 <link rel="stylesheet" href="/css/gallery.css" />
 <body>
+  <br>
+  <form action="" method="post">
+    <button class="btn btn-dark back" name="back_btn" value="back" type="submit"><i class="fas fa-long-arrow-alt-left"></i></button>
+  </form>
     <div class="container-all">
       <div class="header">
         <h2>Photo Gallery VIT'B</h2><br>
@@ -23,7 +27,7 @@
       <%for(var i=key.length - 1; i>=0; i--){%>
         <div class="container">
             <!-- <img src="../uploads/1675163554278.png" alt="" /> -->
-            <img src="<%= key[i].image.data %>" alt="" />
+            <img height="250px" src="<%= key[i].image.data %>" alt="" />
             <span class="title"><%= key[i].name %></span>
         </div>
       <%}%>

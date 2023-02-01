@@ -10,6 +10,11 @@ html {
   padding-right: 4%;
 }
 
+.back {
+  position: relative;
+  left: 2%;
+}
+
 .header {
   margin-top: 30px;
   color: ivory;
