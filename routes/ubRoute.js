@@ -20,13 +20,14 @@ const ubFeedback = (req, res) => {
     var header = req.headers.cookie;
     var token = header.split('=');
     res.redirect('/dashboard/' + token[1]);
+  } else {
+    const feed = req.body.newFeedback;
+    const newFeedback = new db.ubFeedback({
+      feedback: feed,
+    });
+    newFeedback.save();
+    res.redirect('/ub');
   }
-  const feed = req.body.newFeedback;
-  const newFeedback = new db.ubFeedback({
-    feedback: feed,
-  });
-  newFeedback.save();
-  res.redirect('/ub');
 };
 
 module.exports = {
