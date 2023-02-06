@@ -1,26 +1,8 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const router = express.Router();
+const { displayFacultyInfo, backBtn } = require('../controllers/facultyinfo');
 
-var cookieParser = require('cookie-parser');
-app.use(cookieParser());
-const db = require('../mongoDB');
+router.get('/facultyDetails', displayFacultyInfo);
+router.post('/facultyDetails', backBtn);
 
-const displayFacultyInfo = (req, res) => {
-  db.FacultyInfo.find(function (err, Info) {
-    if (err) {
-      console.log(err);
-    } else {
-      res.render('facultyDetails', { details: Info });
-    }
-  });
-};
-
-const backBtn = (req, res) => {
-  if (req.body.back_btn === 'back') {
-    var header = req.headers.cookie;
-    var token = header.split('=');
-    res.redirect('/dashboard/' + token[1]);
-  }
-};
-
-module.exports = { displayFacultyInfo, backBtn };
+module.exports = router;

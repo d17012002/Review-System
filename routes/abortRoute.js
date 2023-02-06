@@ -1,5 +1,7 @@
-const displayAbort = (req, res) => {
-  res.render('abort');
-};
+const express = require('express');
+const router = express.Router();
+const { displayAbort } = require('../controllers/abort');
 
-module.exports = { displayAbort };
+router.get('/abort', displayAbort);
+
+module.exports = router;

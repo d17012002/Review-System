@@ -1,20 +1,7 @@
-const db = require('../mongoDB');
+const express = require('express');
+const router = express.Router();
+const { users } = require('../controllers/user');
 
-const users = (req, res) => {
-  const owners = req.params.id;
-  db.FirefoxUser.find(function (err, firefoxusers) {
-    if (err) {
-      console.log(err);
-    } else {
-      let userCount = 0;
-      for (var i = 0; i < firefoxusers.length; i++) {
-        userCount++;
-      }
-      res.render(owners, { key: firefoxusers, num: userCount });
-    }
-  });
-};
+router.get('/4m/:id', users);
 
-module.exports = {
-  users,
-};
+module.exports = router;

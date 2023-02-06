@@ -1,19 +1,7 @@
-const db = require('../mongoDB');
+const express = require('express');
+const router = express.Router();
+const { displayHome } = require('../controllers/home');
 
-const displayHome = (req, res) => {
-  db.FirefoxUser.find(function (err, firefoxusers) {
-    if (firefoxusers.length === 0) {
-      db.Anurag.save();
-      console.log('Default users added');
-    }
-    if (err) {
-      console.log(err);
-    } else {
-      res.render('home');
-    }
-  });
-};
+router.get('/', displayHome);
 
-module.exports = {
-  displayHome,
-};
+module.exports = router;
