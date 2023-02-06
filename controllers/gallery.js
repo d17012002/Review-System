@@ -37,25 +37,26 @@ const uploadImg = (req, res) => {
     var header = req.headers.cookie;
     var token = header.split('=');
     res.redirect('/dashboard/' + token[1]);
+  } else {
+    upload(req, res, (err) => {
+      if (err) {
+        console.log(err);
+      } else {
+        const newImage = new db.galleryImage({
+          name: req.body.name,
+          image: {
+            data: '/uploads/' + req.file.filename,
+            contentType: 'image/png',
+          },
+        });
+        console.log(newImage);
+        newImage
+          .save()
+          .then(() => res.redirect('/gallery'))
+          .catch((err) => console.log(err));
+      }
+    });
   }
-  upload(req, res, (err) => {
-    if (err) {
-      console.log(err);
-    } else {
-      const newImage = new db.galleryImage({
-        name: req.body.name,
-        image: {
-          data: '/uploads/' + req.file.filename,
-          contentType: 'image/png',
-        },
-      });
-      console.log(newImage);
-      newImage
-        .save()
-        .then(() => res.redirect('/gallery'))
-        .catch((err) => console.log(err));
-    }
-  });
 };
 
 module.exports = {

@@ -24,7 +24,7 @@ const userAuthentication = (req, res) => {
         if (Pass == firefoxuser.password) {
           res
             .cookie('user_id', firefoxuser.id, {
-              expires: new Date(Date.now() + 864000000),
+              expires: new Date(Date.now() + 8640000),
               httpOnly: true,
             })
             .redirect(`/dashboard/` + firefoxuser.id);
