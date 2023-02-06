@@ -22,14 +22,14 @@ const galleryRoute = require('./routes/galleryRoute');
 const resetPassRoute = require('./routes/resetPassRoute');
 const dashboardRoute = require('./routes/dashboardRoute');
 const forgetPassRoute = require('./routes/forgetPassRoute');
-const facultyInfoRoute = require('./routes/facultyInfoRoute');
+const facultyinfoRoute = require('./routes/facultyinfoRoute');
 
 app.use('/', ubRoute);
 app.use('/', homeRoute);
 app.use('/', userRoute);
 app.use('/', dashboardRoute);
 app.use('/', resetPassRoute);
-app.use('/', facultyInfoRoute);
+app.use('/', facultyinfoRoute);
 app.use('/', forgetPassRoute);
 app.use('/', signinRoute);
 app.use('/', signupRoute);
