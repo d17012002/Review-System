@@ -12,7 +12,7 @@ input.addEventListener('keyup', function (e) {
       names[i].innerHTML.toLowerCase().includes(text) ||
       empIds[i].innerHTML.toLowerCase().includes(text)
     ) {
-      faculty_row[i].style.opacity = 100;
+      faculty_row[i].style.display = 'visible';
     } else {
       faculty_row[i].style.display = 'none';
     }

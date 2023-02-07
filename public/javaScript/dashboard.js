@@ -44,3 +44,19 @@ function hide() {
   document.querySelector('.page-sidebar').classList.toggle('hide-bars');
   // document.querySelector(".chat-header").classList.toggle("hide-bars");
 }
+
+function search() {
+  const searchbar = document.querySelector('.feature-search');
+  const features = document.querySelectorAll('.feature');
+  const text = searchbar.value.toLowerCase();
+
+  for (var i = 0; i < features.length; i++) {
+    const option = features[i].innerHTML.toLowerCase();
+    if (!option.includes(text)) {
+      console.log(features[i]);
+      features[i].style.visibility = 'hidden';
+    } else {
+      features[i].style.visibility = 'visible';
+    }
+  }
+}
