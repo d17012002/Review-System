@@ -47,7 +47,7 @@ const FFCSreview = async (req, res) => {
         res.redirect('/abort');
       }
 
-      if (sentiment === 'Negative' && rate > 0.25) {
+      if (sentiment === 'Negative' && rate > 0.1) {
         res.redirect('/abort');
       } else {
         if (req.body.button1 === 'addToList') {
